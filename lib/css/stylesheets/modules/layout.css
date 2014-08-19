@@ -1,0 +1,119 @@
+/* line 3, ../../sass/modules/layout.scss */
+.simple-s3 {
+  font-size: 15px;
+  font-family: sans-serif;
+  background: #d9f3e1;
+  padding: 1em;
+  color: #444;
+}
+/* line 5, ../../../../../../../../.rvm/gems/ruby-2.1.0/gems/compass-core-1.0.0.alpha.17/stylesheets/compass/reset/_utilities.scss */
+.simple-s3 html, .simple-s3 body, .simple-s3 div, .simple-s3 span, .simple-s3 applet, .simple-s3 object, .simple-s3 iframe,
+.simple-s3 h1, .simple-s3 h2, .simple-s3 h3, .simple-s3 h4, .simple-s3 h5, .simple-s3 h6, .simple-s3 p, .simple-s3 blockquote, .simple-s3 pre,
+.simple-s3 a, .simple-s3 abbr, .simple-s3 acronym, .simple-s3 address, .simple-s3 big, .simple-s3 cite, .simple-s3 code,
+.simple-s3 del, .simple-s3 dfn, .simple-s3 em, .simple-s3 img, .simple-s3 ins, .simple-s3 kbd, .simple-s3 q, .simple-s3 s, .simple-s3 samp,
+.simple-s3 small, .simple-s3 strike, .simple-s3 strong, .simple-s3 sub, .simple-s3 sup, .simple-s3 tt, .simple-s3 var,
+.simple-s3 b, .simple-s3 u, .simple-s3 i, .simple-s3 center,
+.simple-s3 dl, .simple-s3 dt, .simple-s3 dd, .simple-s3 ol, .simple-s3 ul, .simple-s3 li,
+.simple-s3 fieldset, .simple-s3 form, .simple-s3 label, .simple-s3 legend,
+.simple-s3 table, .simple-s3 caption, .simple-s3 tbody, .simple-s3 tfoot, .simple-s3 thead, .simple-s3 tr, .simple-s3 th, .simple-s3 td,
+.simple-s3 article, .simple-s3 aside, .simple-s3 canvas, .simple-s3 details, .simple-s3 embed,
+.simple-s3 figure, .simple-s3 figcaption, .simple-s3 footer, .simple-s3 header, .simple-s3 hgroup,
+.simple-s3 menu, .simple-s3 nav, .simple-s3 output, .simple-s3 ruby, .simple-s3 section, .simple-s3 summary,
+.simple-s3 time, .simple-s3 mark, .simple-s3 audio, .simple-s3 video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+/* line 22, ../../../../../../../../.rvm/gems/ruby-2.1.0/gems/compass-core-1.0.0.alpha.17/stylesheets/compass/reset/_utilities.scss */
+.simple-s3 html {
+  line-height: 1;
+}
+/* line 24, ../../../../../../../../.rvm/gems/ruby-2.1.0/gems/compass-core-1.0.0.alpha.17/stylesheets/compass/reset/_utilities.scss */
+.simple-s3 ol, .simple-s3 ul {
+  list-style: none;
+}
+/* line 26, ../../../../../../../../.rvm/gems/ruby-2.1.0/gems/compass-core-1.0.0.alpha.17/stylesheets/compass/reset/_utilities.scss */
+.simple-s3 table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* line 28, ../../../../../../../../.rvm/gems/ruby-2.1.0/gems/compass-core-1.0.0.alpha.17/stylesheets/compass/reset/_utilities.scss */
+.simple-s3 caption, .simple-s3 th, .simple-s3 td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+/* line 30, ../../../../../../../../.rvm/gems/ruby-2.1.0/gems/compass-core-1.0.0.alpha.17/stylesheets/compass/reset/_utilities.scss */
+.simple-s3 q, .simple-s3 blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../../../../../.rvm/gems/ruby-2.1.0/gems/compass-core-1.0.0.alpha.17/stylesheets/compass/reset/_utilities.scss */
+.simple-s3 q:before, .simple-s3 q:after, .simple-s3 blockquote:before, .simple-s3 blockquote:after {
+  content: "";
+  content: none;
+}
+/* line 32, ../../../../../../../../.rvm/gems/ruby-2.1.0/gems/compass-core-1.0.0.alpha.17/stylesheets/compass/reset/_utilities.scss */
+.simple-s3 a img {
+  border: none;
+}
+/* line 116, ../../../../../../../../.rvm/gems/ruby-2.1.0/gems/compass-core-1.0.0.alpha.17/stylesheets/compass/reset/_utilities.scss */
+.simple-s3 article, .simple-s3 aside, .simple-s3 details, .simple-s3 figcaption, .simple-s3 figure, .simple-s3 footer, .simple-s3 header, .simple-s3 hgroup, .simple-s3 main, .simple-s3 menu, .simple-s3 nav, .simple-s3 section, .simple-s3 summary {
+  display: block;
+}
+/* line 13, ../../sass/modules/layout.scss */
+.simple-s3 a {
+  color: #000;
+  font-weight: bold;
+}
+/* line 18, ../../sass/modules/layout.scss */
+.simple-s3 p {
+  padding: 0 0 .7em;
+}
+/* line 22, ../../sass/modules/layout.scss */
+.simple-s3 .simple-s3__bucket-item {
+  background: #fff;
+  padding: 0.3em;
+  margin: 0.3em 0;
+  overflow: hidden;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+}
+/* line 31, ../../sass/modules/layout.scss */
+.simple-s3 .simple-s3__bucket-item__text-content {
+  padding: 1em;
+}
+/* line 35, ../../sass/modules/layout.scss */
+.simple-s3 .simple-s3__bucket-item__file-extension {
+  float: right;
+  padding: 3.3em 1.5em 0;
+  height: 120px;
+  background: #eee;
+  font-family: monospace;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+}
+/* line 44, ../../sass/modules/layout.scss */
+.simple-s3 .simple-s3__bucket-item__img-preview {
+  float: right;
+  max-height: 120px;
+  margin-right: 0.3em;
+}
+/* line 52, ../../sass/modules/layout.scss */
+.simple-s3 button {
+  background: #80da9d;
+  border: none;
+  padding: 0.8em 1.2em 0.8em 1em;
+  cursor: pointer;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+}
+/* line 60, ../../sass/modules/layout.scss */
+.simple-s3 button:hover {
+  opacity: 0.8;
+}

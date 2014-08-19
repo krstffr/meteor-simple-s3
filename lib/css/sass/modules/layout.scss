@@ -1,0 +1,65 @@
+@import "../base/vars";
+
+.simple-s3 {
+
+	@import "compass/reset";
+
+	font-size: 15px;
+	font-family: sans-serif;
+	background: $color-green-light;
+	padding: 1em;
+	color: #444;
+
+	a {
+		color: #000;
+		font-weight: bold;
+	}
+
+	p {
+		padding: 0 0 .7em;
+	}
+
+	& &__bucket-item {
+
+		background: #fff;
+		padding: 0.3em;
+		margin: 0.3em 0;
+		overflow: hidden;
+
+		@include border-radius( 4px );
+
+		&__text-content {
+			padding: 1em;
+		}
+
+		&__file-extension {
+			float: right;
+			padding: 3.3em 1.5em 0;
+			height: 120px;
+			background: #eee;
+			font-family: monospace;
+			@include border-radius( 2px );
+		}
+
+		&__img-preview {
+			float: right;
+			max-height: 120px;
+			margin-right: 0.3em;
+		}
+
+	}
+
+	button {
+		background: $color-green;
+		border: none;
+		padding: 0.8em 1.2em 0.8em 1em;
+		cursor: pointer;
+
+		@include border-radius( 2px );
+
+		&:hover {
+			opacity: 0.8;
+		}
+	}
+	
+}

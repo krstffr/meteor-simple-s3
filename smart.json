@@ -1,0 +1,11 @@
+{
+  "name": "simple-s3",
+  "description": "UI for viewing, uploading and deleting files from your AWS S3.",
+  "homepage": "https://github.com/krstffr/meteor-simple-s3",
+  "author": "Kristoffer Klintberg <krstffr@gmail.com>",
+  "version": "0.0.1",
+  "git": "https://github.com/krstffr/meteor-simple-s3.git",
+  "packages": {
+  	"aws-sdk": {}
+  }
+}

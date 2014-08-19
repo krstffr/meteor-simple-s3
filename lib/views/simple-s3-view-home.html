@@ -1,0 +1,47 @@
+<template name="simpleS3ViewHome">
+	
+	<h1>Simple S3</h1>
+
+	{{#if bucketItems }}
+
+		<h2>Contents of {{ bucketName }}</h2>
+
+		<p>
+			<button class="simple-s3__update-list">
+				Update the file list.
+			</button>
+		</p>
+
+		<hr>
+
+		{{#each bucketItems }}
+			
+			{{#if isImage }}
+				<img src="http://{{ bucketName }}.s3.amazonaws.com/{{ Key }}" alt="No alt text." />
+			{{else}}
+				[FILE]
+			{{/if}}
+
+			<p>
+				<a href="http://{{ bucketName }}.s3.amazonaws.com/{{ Key }}">
+					{{ Key }}
+				</a>
+			</p>
+
+			<p>
+				<button class="simple-s3__delete-file">
+					Delete file?
+				</button>
+			</p>
+
+			<hr>
+
+		{{/each}}
+
+	{{else}}
+
+		<h2>Wait, getting contents…</h2>
+
+	{{/if}}
+
+</template>

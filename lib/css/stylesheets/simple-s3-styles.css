@@ -81,6 +81,19 @@
   padding: 0 0 .7em;
 }
 /* line 22, ../sass/modules/layout.scss */
+.simple-s3 h2 {
+  font-size: 1.6em;
+  padding: 0 0 .5em;
+}
+/* line 27, ../sass/modules/layout.scss */
+.simple-s3 em {
+  font-style: italic;
+}
+/* line 31, ../sass/modules/layout.scss */
+.simple-s3 strong {
+  font-weight: bold;
+}
+/* line 35, ../sass/modules/layout.scss */
 .simple-s3 .simple-s3__bucket-item {
   background: #fff;
   padding: 0.3em;
@@ -90,28 +103,30 @@
   -webkit-border-radius: 4px;
   border-radius: 4px;
 }
-/* line 31, ../sass/modules/layout.scss */
+/* line 44, ../sass/modules/layout.scss */
 .simple-s3 .simple-s3__bucket-item__text-content {
   padding: 1em;
 }
-/* line 35, ../sass/modules/layout.scss */
+/* line 48, ../sass/modules/layout.scss */
 .simple-s3 .simple-s3__bucket-item__file-extension {
   float: right;
   padding: 3.3em 1.5em 0;
   height: 120px;
+  width: 85px;
+  text-align: center;
   background: #eee;
   font-family: monospace;
   -moz-border-radius: 2px;
   -webkit-border-radius: 2px;
   border-radius: 2px;
 }
-/* line 44, ../sass/modules/layout.scss */
+/* line 59, ../sass/modules/layout.scss */
 .simple-s3 .simple-s3__bucket-item__img-preview {
   float: right;
   max-height: 120px;
   margin-right: 0.3em;
 }
-/* line 52, ../sass/modules/layout.scss */
+/* line 67, ../sass/modules/layout.scss */
 .simple-s3 button {
   background: #80da9d;
   border: none;
@@ -121,7 +136,7 @@
   -webkit-border-radius: 2px;
   border-radius: 2px;
 }
-/* line 60, ../sass/modules/layout.scss */
+/* line 75, ../sass/modules/layout.scss */
 .simple-s3 button:hover {
   opacity: 0.8;
 }

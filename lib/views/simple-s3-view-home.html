@@ -1,12 +1,10 @@
 <template name="simpleS3ViewHome">
 
 	<div class="simple-s3">
-		
-		<h1>Simple S3</h1>
 
 		{{#if bucketItems }}
 
-			<h2>Contents of {{ bucketName }}</h2>
+			<h2>Contents of bucket: <strong>{{ bucketName }}</strong></h2>
 
 			<p>
 				<button class="simple-s3__update-list">
@@ -37,13 +35,15 @@
 				<div class="simple-s3__bucket-item__text-content">
 
 					<p>
+						{{ folder }}
 						<a href="http://{{ bucketName }}.s3.amazonaws.com/{{ Key }}">
-							{{ Key }}
-						</a>
+							{{ filename }}
+						</a>, 
+						<em>{{ sizeInKb }} KB</em>
 					</p>
 
 					<button class="simple-s3__delete-file">
-						Delete file?
+						Delete
 					</button>
 
 					</div>

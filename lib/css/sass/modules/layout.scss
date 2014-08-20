@@ -19,6 +19,19 @@
 		padding: 0 0 .7em;
 	}
 
+	h2 {
+		font-size: 1.6em;
+		padding: 0 0 .5em;
+	}
+
+	em {
+		font-style: italic;
+	}
+
+	strong {
+		font-weight: bold;
+	}
+
 	& &__bucket-item {
 
 		background: #fff;
@@ -36,6 +49,8 @@
 			float: right;
 			padding: 3.3em 1.5em 0;
 			height: 120px;
+			width: 85px;
+			text-align: center;
 			background: #eee;
 			font-family: monospace;
 			@include border-radius( 2px );

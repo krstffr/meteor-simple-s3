@@ -20,12 +20,20 @@
 				</button>
 			</p>
 
+			<div class="simple-s3__bucket-item">
+				{{#each sortButtons }}
+					<button class="simple-s3__sort-by-button" data-sort-by="{{ sortBy }}">
+						Sort by {{ sortBy }}
+					</button>
+				{{/each}}
+			</div>
+
 			{{#each bucketItems }}
 
 			<div class="simple-s3__bucket-item  {{#if isImageAndPreview }}simple-s3__bucket-item--preview-image{{/if }}">
 					
 				<div class="simple-s3__bucket-item__file-extension">
-					{{ fileExtension }}
+					{{ FileExtension }}
 				</div>
 				
 				{{#if isImageAndPreview }}
@@ -35,8 +43,8 @@
 				<div class="simple-s3__bucket-item__text-content">
 
 					<p>
-						{{ folder }}
-						<a href="http://{{ bucketName }}.s3.amazonaws.com/{{ Key }}">{{ filename }}</a>
+						{{ Directory }}
+						<a href="http://{{ bucketName }}.s3.amazonaws.com/{{ Key }}">{{ Filename }}</a>
 						<em>{{ sizeInKb }} KB</em>
 					</p>
 
@@ -44,7 +52,7 @@
 
 						{{#each bucketItemButtons }}
 
-							<button class="{{ cssClass }}">
+							<button class="{{ cssClass }}" data-key="{{ ../Key }}">
 								{{ buttonText }}
 							</button>
 

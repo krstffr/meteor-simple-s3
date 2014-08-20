@@ -1,5 +1,14 @@
 @import "../base/vars";
 
+%button-main-stuff {
+	padding: 0.75em 1em 0.65em;
+	text-align: center;
+	font-size: 0.9em;
+	font-family: inherit;
+
+	@include border-radius( 2px );
+}
+
 .simple-s3 {
 
 	@import "compass/reset";
@@ -36,24 +45,47 @@
 
 		background: #fff;
 		padding: 0.3em;
-		margin: 0.3em 0;
+		margin: 4px 0;
 		overflow: hidden;
 
 		@include border-radius( 4px );
 
+		&--preview-image {
+
+			& .simple-s3__bucket-item__file-extension {
+				padding-top: 3.3em;
+				height: 120px;
+			}
+
+		}
+
+		&:hover {
+			.simple-s3__bucket-item__text-content {
+				&__buttons {
+					display: inline-block;
+				}
+			}
+		}
+
 		&__text-content {
-			padding: 1em;
+			p {
+				float: left;
+				display: inline-block;
+				padding: 0.6em 0 0.45em 0.5em;
+				vertical-align: middle;
+			}
+			&__buttons {
+				display: none;
+				float: right;
+				margin-right: 0.3em;
+			}
 		}
 
 		&__file-extension {
 			float: right;
-			padding: 3.3em 1.5em 0;
-			height: 120px;
 			width: 85px;
-			text-align: center;
 			background: #eee;
-			font-family: monospace;
-			@include border-radius( 2px );
+			@extend %button-main-stuff;
 		}
 
 		&__img-preview {
@@ -67,10 +99,9 @@
 	button {
 		background: $color-green;
 		border: none;
-		padding: 0.8em 1.2em 0.8em 1em;
 		cursor: pointer;
 
-		@include border-radius( 2px );
+		@extend %button-main-stuff;
 
 		&:hover {
 			opacity: 0.8;

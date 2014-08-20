@@ -22,7 +22,7 @@
 
 			{{#each bucketItems }}
 
-			<div class="simple-s3__bucket-item">
+			<div class="simple-s3__bucket-item  {{#if isImageAndPreview }}simple-s3__bucket-item--preview-image{{/if }}">
 					
 				<div class="simple-s3__bucket-item__file-extension">
 					{{ fileExtension }}
@@ -36,15 +36,21 @@
 
 					<p>
 						{{ folder }}
-						<a href="http://{{ bucketName }}.s3.amazonaws.com/{{ Key }}">
-							{{ filename }}
-						</a>, 
+						<a href="http://{{ bucketName }}.s3.amazonaws.com/{{ Key }}">{{ filename }}</a>
 						<em>{{ sizeInKb }} KB</em>
 					</p>
 
-					<button class="simple-s3__delete-file">
-						Delete
-					</button>
+					<div class="simple-s3__bucket-item__text-content__buttons">
+
+						{{#each bucketItemButtons }}
+
+							<button class="{{ cssClass }}">
+								{{ buttonText }}
+							</button>
+
+						{{/each}}
+
+					</div>
 
 					</div>
 

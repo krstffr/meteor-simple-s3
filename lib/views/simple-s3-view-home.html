@@ -2,87 +2,83 @@
 
 	<div class="simple-s3">
 
-		{{#if bucketItems }}
+		<h2>
+			Contents of: <strong>{{ bucketName }}{{ filter 'Directory' }}</strong>
+		</h2>
 
-			<h2>Contents of bucket: <strong>{{ bucketName }}</strong></h2>
-
-			<p>
-				{{#each mainButtons }}
-					<button class="{{ cssClass }}">
-						{{ buttonText }}
-					</button>
-				{{/each}}
-			</p>
-
-			{{#if showUploadForm }}
-
-				<form class="simple-s3__upload-form" enctype="multipart/form-data">
-					<input class="simple-s3__upload-form__file" type="file" />
-					<input type="submit" />
-				</form>
-
-			{{/if}}
-
-			{{#if showCreateFolderForm }}
-
-				<form class="simple-s3__create-folder-form" enctype="multipart/form-data">
-					<input class="simple-s3__create-folder-form__folder-name" type="text" />
-					<input type="submit" />
-				</form>
-
-			{{/if}}
-
-			<div class="simple-s3__bucket-item">
-				{{#each sortButtons }}
-					<button class="simple-s3__sort-by-button" data-sort-by="{{ sortBy }}">
-						Sort by {{ sortBy }}
-					</button>
-				{{/each}}
-			</div>
-
-			{{#each bucketItems }}
-
-			<div class="simple-s3__bucket-item  {{#if isImageAndPreview }}simple-s3__bucket-item--preview-image{{/if }}">
-					
-				<div class="simple-s3__bucket-item__file-extension">
-					{{ FileExtension }}
-				</div>
-				
-				{{#if isImageAndPreview }}
-					<img class="simple-s3__bucket-item__img-preview" src="http://{{ bucketName }}.s3.amazonaws.com/{{ Key }}" alt="No alt text." />
-				{{/if}}
-
-				<div class="simple-s3__bucket-item__text-content">
-
-					<p>
-						{{ Directory }}
-						<a href="http://{{ bucketName }}.s3.amazonaws.com/{{ Key }}">{{ Filename }}</a>
-						<em>{{ sizeInKb }} KB</em>
-					</p>
-
-					<div class="simple-s3__bucket-item__text-content__buttons">
-
-						{{#each bucketItemButtons }}
-
-							<button class="{{ cssClass }}" data-key="{{ ../Key }}">
-								{{ buttonText }}
-							</button>
-
-						{{/each}}
-
-					</div>
-
-					</div>
-
-				</div>
-
+		<p>
+			{{#each mainButtons }}
+				<button class="{{ cssClass }}">
+					{{ buttonText }}
+				</button>
 			{{/each}}
+		</p>
 
-		{{else}}
+		{{#if showUploadForm }}
 
-			<h2>Wait, getting contents…</h2>
+			<form class="simple-s3__upload-form" enctype="multipart/form-data">
+				<input class="simple-s3__upload-form__file" type="file" />
+				<input type="submit" />
+			</form>
 
 		{{/if}}
+
+		{{#if showCreateFolderForm }}
+
+			<form class="simple-s3__create-folder-form" enctype="multipart/form-data">
+				<input class="simple-s3__create-folder-form__folder-name" type="text" />
+				<input type="submit" />
+			</form>
+
+		{{/if}}
+
+		<div class="simple-s3__bucket-item">
+			{{#each sortButtons }}
+				<button class="simple-s3__sort-by-button" data-sort-by="{{ sortBy }}">
+					Sort by {{ sortBy }}
+				</button>
+			{{/each}}
+		</div>
+
+		{{#each bucketItems }}
+
+		<div class="simple-s3__bucket-item  {{#if isImageAndPreview }}simple-s3__bucket-item--preview-image{{/if }}">
+				
+			<div class="simple-s3__bucket-item__file-extension">
+				{{ FileExtension }}
+			</div>
+			
+			{{#if isImageAndPreview }}
+				<img class="simple-s3__bucket-item__img-preview" src="http://{{ bucketName }}.s3.amazonaws.com/{{ Key }}" alt="No alt text." />
+			{{/if}}
+
+			<div class="simple-s3__bucket-item__text-content">
+
+				<p>
+					<a href="#" class="simple-s3__bucket-item__filter-directory-link">{{ Directory }}</a>
+					<a href="http://{{ bucketName }}.s3.amazonaws.com/{{ Key }}">{{ Filename }}</a>
+					{{#if Filename }}
+						<em>{{ sizeInKb }} KB</em>
+					{{/if}}
+				</p>
+
+				<div class="simple-s3__bucket-item__text-content__buttons">
+
+					{{#each bucketItemButtons }}
+
+						<button class="{{ cssClass }}" data-key="{{ ../Key }}">
+							{{ buttonText }}
+						</button>
+
+					{{/each}}
+
+				</div>
+
+				</div>
+
+			</div>
+
+		{{/each}}
 
 	</div>
 

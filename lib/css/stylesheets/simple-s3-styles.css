@@ -148,13 +148,18 @@
   max-height: 120px;
   margin-right: 0.3em;
 }
-/* line 99, ../sass/modules/layout.scss */
+/* line 97, ../sass/modules/layout.scss */
+.simple-s3 .simple-s3__bucket-item__filter-directory-link {
+  color: #999;
+  font-weight: normal;
+}
+/* line 104, ../sass/modules/layout.scss */
 .simple-s3 button {
   background: #80da9d;
   border: none;
   cursor: pointer;
 }
-/* line 106, ../sass/modules/layout.scss */
+/* line 111, ../sass/modules/layout.scss */
 .simple-s3 button:hover {
   opacity: 0.8;
 }

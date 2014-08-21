@@ -101,15 +101,23 @@
   color: #999;
   font-weight: normal;
 }
-/* line 42, ../sass/modules/layout.scss */
+/* line 41, ../sass/modules/layout.scss */
+.simple-s3 .simple-s3__headline__file-extension-filtered a {
+  opacity: 0.1;
+}
+/* line 45, ../sass/modules/layout.scss */
+.simple-s3 .simple-s3__headline__file-extension-filtered:hover a {
+  opacity: 1;
+}
+/* line 52, ../sass/modules/layout.scss */
 .simple-s3 em {
   font-style: italic;
 }
-/* line 46, ../sass/modules/layout.scss */
+/* line 56, ../sass/modules/layout.scss */
 .simple-s3 strong {
   font-weight: bold;
 }
-/* line 50, ../sass/modules/layout.scss */
+/* line 60, ../sass/modules/layout.scss */
 .simple-s3 .simple-s3__bucket-item {
   background: #fff;
   padding: 0.3em;
@@ -119,52 +127,54 @@
   -webkit-border-radius: 4px;
   border-radius: 4px;
 }
-/* line 61, ../sass/modules/layout.scss */
+/* line 71, ../sass/modules/layout.scss */
 .simple-s3 .simple-s3__bucket-item--preview-image .simple-s3__bucket-item__file-extension {
   padding-top: 3.3em;
   height: 120px;
 }
-/* line 70, ../sass/modules/layout.scss */
+/* line 80, ../sass/modules/layout.scss */
 .simple-s3 .simple-s3__bucket-item:hover .simple-s3__bucket-item__text-content__buttons {
   display: inline-block;
 }
-/* line 77, ../sass/modules/layout.scss */
+/* line 87, ../sass/modules/layout.scss */
 .simple-s3 .simple-s3__bucket-item__text-content p {
   float: left;
   display: inline-block;
   padding: 0.6em 0 0.45em 0.5em;
   vertical-align: middle;
 }
-/* line 83, ../sass/modules/layout.scss */
+/* line 93, ../sass/modules/layout.scss */
 .simple-s3 .simple-s3__bucket-item__text-content__buttons {
   display: none;
   float: right;
   margin-right: 0.3em;
 }
-/* line 90, ../sass/modules/layout.scss */
+/* line 100, ../sass/modules/layout.scss */
 .simple-s3 .simple-s3__bucket-item__file-extension {
   float: right;
   width: 85px;
   background: #eee;
+  text-decoration: none;
+  font-weight: normal;
 }
-/* line 97, ../sass/modules/layout.scss */
+/* line 109, ../sass/modules/layout.scss */
 .simple-s3 .simple-s3__bucket-item__img-preview {
   float: right;
   max-height: 120px;
   margin-right: 0.3em;
 }
-/* line 103, ../sass/modules/layout.scss */
+/* line 115, ../sass/modules/layout.scss */
 .simple-s3 .simple-s3__bucket-item__filter-directory-link {
   color: #999;
   font-weight: normal;
 }
-/* line 110, ../sass/modules/layout.scss */
+/* line 122, ../sass/modules/layout.scss */
 .simple-s3 button {
   background: #80da9d;
   border: none;
   cursor: pointer;
 }
-/* line 117, ../sass/modules/layout.scss */
+/* line 129, ../sass/modules/layout.scss */
 .simple-s3 button:hover {
   opacity: 0.8;
 }

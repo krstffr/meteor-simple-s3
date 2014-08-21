@@ -29,13 +29,23 @@
 	}
 
 	& &__headline {
-		
+
 		font-size: 1.6em;
 		padding: 0 0 .5em;
 
 		&__folder-filter-link {
 			color: #999;
 			font-weight: normal;
+		}
+		&__file-extension-filtered {
+			a {
+				opacity: 0.1;
+			}
+			&:hover {
+				a {
+					opacity: 1;
+				}
+			}
 		}
 	}
 
@@ -91,6 +101,8 @@
 			float: right;
 			width: 85px;
 			background: #eee;
+			text-decoration: none;
+			font-weight: normal;
 			@extend %button-main-stuff;
 		}
 

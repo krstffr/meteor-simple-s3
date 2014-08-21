@@ -6,11 +6,17 @@
 			Contents of: 
 			<strong>
 				{{ bucketName }}
+			</strong>
 				{{#each filteredFoldersLinks }}
 					<a class="simple-s3__headline__folder-filter-link" href="#" data-filter-dir="{{ link }}">
 						{{ linkName }}</a> /
 				{{/each}}
-			</strong>
+				{{#if filter 'FileExtension' }}
+					<span class="simple-s3__headline__file-extension-filtered">
+						*{{ filter 'FileExtension' }}
+						<a href="#">x</a>
+					</span>
+				{{/if}}
 		</h1>
 
 		<p>
@@ -51,9 +57,7 @@
 
 		<div class="simple-s3__bucket-item  {{#if isImageAndPreview }}simple-s3__bucket-item--preview-image{{/if }}">
 				
-			<div class="simple-s3__bucket-item__file-extension">
-				{{ FileExtension }}
-			</div>
+			<a href="#" class="simple-s3__bucket-item__file-extension">{{ FileExtension }}</a>
 			
 			{{#if isImageAndPreview }}
 				<img class="simple-s3__bucket-item__img-preview" src="http://{{ bucketName }}.s3.amazonaws.com/{{ Key }}" alt="No alt text." />

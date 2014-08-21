@@ -23,6 +23,15 @@
 
 			{{/if}}
 
+			{{#if showCreateFolderForm }}
+
+				<form class="simple-s3__create-folder-form" enctype="multipart/form-data">
+					<input class="simple-s3__create-folder-form__folder-name" type="text" />
+					<input type="submit" />
+				</form>
+
+			{{/if}}
+
 			<div class="simple-s3__bucket-item">
 				{{#each sortButtons }}
 					<button class="simple-s3__sort-by-button" data-sort-by="{{ sortBy }}">

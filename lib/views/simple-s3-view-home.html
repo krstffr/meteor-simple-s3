@@ -7,18 +7,21 @@
 			<h2>Contents of bucket: <strong>{{ bucketName }}</strong></h2>
 
 			<p>
-				<button class="simple-s3__update-list">
-					Update the file list.
-				</button>
-				<button class="simple-s3__show-image-previews">
-					{{#if previews }}
-						Hide
-					{{else}}
-						Show
-					{{/if}}
-					image previews.
-				</button>
+				{{#each mainButtons }}
+					<button class="{{ cssClass }}">
+						{{ buttonText }}
+					</button>
+				{{/each}}
 			</p>
+
+			{{#if showUploadForm }}
+
+				<form class="simple-s3__upload-form" enctype="multipart/form-data">
+					<input class="simple-s3__upload-form__file" type="file" />
+					<input type="submit" />
+				</form>
+
+			{{/if}}
 
 			<div class="simple-s3__bucket-item">
 				{{#each sortButtons }}

@@ -56,6 +56,10 @@
 			border: 1px solid #ddd;
 
 			@include border-radius( 3px );
+
+			&--error {
+				color: #d22;
+			}
 		}
 	}
 

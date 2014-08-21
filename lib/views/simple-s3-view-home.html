@@ -22,6 +22,11 @@
 						Loading…
 					</span>
 				{{/if}}
+				{{#if errorMessage }}
+					<span class="simple-s3__headline__loading-indicator simple-s3__headline__loading-indicator--error">
+						{{ errorMessage }}
+					</span>
+				{{/if}}
 		</h1>
 
 		<p>
@@ -60,37 +65,45 @@
 
 		{{#each bucketItems }}
 
-		<div class="simple-s3__bucket-item  {{#if isImageAndPreview }}simple-s3__bucket-item--preview-image{{/if }}">
+			<div class="simple-s3__bucket-item  {{#if isImageAndPreview }}simple-s3__bucket-item--preview-image{{/if }}">
+
+				{{#if emptyMessage }}
+					<div class="simple-s3__bucket-item__text-content">
+						<p>{{emptyMessage}}</p>
+					</div>
+				{{else}}
+					
+				<a href="#" class="simple-s3__bucket-item__file-extension">{{ FileExtension }}</a>
 				
-			<a href="#" class="simple-s3__bucket-item__file-extension">{{ FileExtension }}</a>
-			
-			{{#if isImageAndPreview }}
-				<img class="simple-s3__bucket-item__img-preview" src="http://{{ bucketName }}.s3.amazonaws.com/{{ Key }}" alt="No alt text." />
-			{{/if}}
+				{{#if isImageAndPreview }}
+					<img class="simple-s3__bucket-item__img-preview" src="http://{{ bucketName }}.s3.amazonaws.com/{{ Key }}" alt="No alt text." />
+				{{/if}}
 
-			<div class="simple-s3__bucket-item__text-content">
+				<div class="simple-s3__bucket-item__text-content">
 
-				<p>
-					<a href="#" class="simple-s3__bucket-item__filter-directory-link">{{ Directory }}</a>
-					<a href="http://{{ bucketName }}.s3.amazonaws.com/{{ Key }}">{{ Filename }}</a>
-					{{#if Filename }}
-						<em>{{ sizeInKb }} KB</em>
-					{{/if}}
-				</p>
+					<p>
+						<a href="#" class="simple-s3__bucket-item__filter-directory-link">{{ Directory }}</a>
+						<a href="http://{{ bucketName }}.s3.amazonaws.com/{{ Key }}">{{ Filename }}</a>
+						{{#if Filename }}
+							<em>{{ sizeInKb }} KB</em>
+						{{/if}}
+					</p>
 
-				<div class="simple-s3__bucket-item__text-content__buttons">
+					<div class="simple-s3__bucket-item__text-content__buttons">
 
-					{{#each buttons 'bucketListItem' }}
+						{{#each buttons 'bucketListItem' }}
 
-						<button class="{{ cssClass }}" data-key="{{ ../Key }}">
-							{{ buttonText }}
-						</button>
+							<button class="{{ cssClass }}" data-key="{{ ../Key }}">
+								{{ buttonText }}
+							</button>
 
-					{{/each}}
+						{{/each}}
 
-				</div>
+					</div>
 
 				</div>
+
+				{{/if}}
 
 			</div>
 

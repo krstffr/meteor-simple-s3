@@ -2,12 +2,19 @@
 
 	<div class="simple-s3">
 
-		<h2>
-			Contents of: <strong>{{ bucketName }}{{ filter 'Directory' }}</strong>
-		</h2>
+		<h1 class="simple-s3__headline">
+			Contents of: 
+			<strong>
+				{{ bucketName }}
+				{{#each filteredFoldersLinks }}
+					<a class="simple-s3__headline__folder-filter-link" href="#" data-filter-dir="{{ link }}">
+						{{ linkName }}</a> /
+				{{/each}}
+			</strong>
+		</h1>
 
 		<p>
-			{{#each mainButtons }}
+			{{#each buttons 'main' }}
 				<button class="{{ cssClass }}">
 					{{ buttonText }}
 				</button>
@@ -64,7 +71,7 @@
 
 				<div class="simple-s3__bucket-item__text-content__buttons">
 
-					{{#each bucketItemButtons }}
+					{{#each buttons 'bucketListItem' }}
 
 						<button class="{{ cssClass }}" data-key="{{ ../Key }}">
 							{{ buttonText }}

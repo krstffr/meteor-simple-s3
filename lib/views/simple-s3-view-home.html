@@ -67,51 +67,70 @@
 			{{/each}}
 		</div>
 
-		{{#each bucketItems }}
+		<div class="simple-s3__bucket-items {{ disabledUI }}">
 
-			<div class="simple-s3__bucket-item  {{#if isImageAndPreview }}simple-s3__bucket-item--preview-image{{/if }}" data-key="{{ Key }}">
+			{{#each bucketItems }}
 
-				{{#if emptyMessage }}
-					<div class="simple-s3__bucket-item__text-content">
-						<p>{{emptyMessage}}</p>
-					</div>
+				<div class="
+				simple-s3__bucket-item 
+
+				{{#if isFile }}
+					simple-s3__bucket-item--file
 				{{else}}
-					
-				<a href="#" class="simple-s3__bucket-item__file-extension">{{ FileExtension }}</a>
-				
-				{{#if isImageAndPreview }}
-					<img class="simple-s3__bucket-item__img-preview" src="http://{{ bucketName }}.s3.amazonaws.com/{{ Key }}" alt="No alt text." />
+					simple-s3__bucket-item--directory
 				{{/if}}
 
-				<div class="simple-s3__bucket-item__text-content">
+				{{#if isImageAndPreview }}
+					simple-s3__bucket-item--preview-image
+				{{/if }}
 
-					<p>
-						<a href="#" class="simple-s3__bucket-item__filter-directory-link">{{ Directory }}</a>
-						<a href="http://{{ bucketName }}.s3.amazonaws.com/{{ Key }}">{{ Filename }}</a>
-						{{#if Filename }}
-							<em>{{ sizeInKb }} KB</em>
-						{{/if}}
-					</p>
+				{{ movingClasses }}
 
-					<div class="simple-s3__bucket-item__text-content__buttons">
+				" data-key="{{ Key }}">
 
-						{{#each buttons 'bucketListItem' this }}
+					{{#if emptyMessage }}
+						<div class="simple-s3__bucket-item__text-content">
+							<p>{{emptyMessage}}</p>
+						</div>
+					{{else}}
+						
+					<a href="#" class="simple-s3__bucket-item__file-extension">{{ FileExtension }}</a>
+					
+					{{#if isImageAndPreview }}
+						<img class="simple-s3__bucket-item__img-preview" src="http://{{ bucketName }}.s3.amazonaws.com/{{ Key }}" alt="No alt text." />
+					{{/if}}
 
-							<button class="{{ cssClass }}">
-								{{ buttonText }}
-							</button>
+					<div class="simple-s3__bucket-item__text-content">
 
-						{{/each}}
+						<p>
+							<a href="#" class="simple-s3__bucket-item__filter-directory-link">{{ Directory }}</a>
+							<a href="http://{{ bucketName }}.s3.amazonaws.com/{{ Key }}">{{ Filename }}</a>
+							{{#if Filename }}
+								<em>{{ sizeInKb }} KB</em>
+							{{/if}}
+						</p>
+
+						<div class="simple-s3__bucket-item__text-content__buttons">
+
+							{{#each buttons 'bucketListItem' this }}
+
+								<button class="{{ cssClass }}">
+									{{ buttonText }}
+								</button>
+
+							{{/each}}
+
+						</div>
 
 					</div>
+
+					{{/if}}
 
 				</div>
 
-				{{/if}}
+			{{/each}}
 
-			</div>
-
-		{{/each}}
+		</div>
 
 	</div>
 

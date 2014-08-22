@@ -54,6 +54,7 @@
 			background: #FFF;
 			padding: 0.3em;
 			border: 1px solid $color-gray-light;
+			z-index: 500;
 
 			@include border-radius( 3px );
 
@@ -71,12 +72,56 @@
 		font-weight: bold;
 	}
 
+	& &__bucket-items {
+
+		&--disabled {
+			opacity: 0.3;
+			pointer-events: none;
+		}
+
+	}
+
 	& &__bucket-item {
 
 		background: #fff;
 		padding: 0.3em;
 		margin: 4px 0;
 		overflow: hidden;
+		position: relative;
+
+		&.ui-draggable-dragging {
+			background: $color-gray-light;
+			z-index: 100;
+			@include box-shadow(0 5px 25px rgba(black, 0.15) );
+		}
+
+		&--directory {
+			&.simple-s3__bucket-item--movable {
+				opacity: 0.5;
+			}
+		}
+
+		&--file {
+			&.simple-s3__bucket-item--movable {
+				cursor: pointer;
+				@include box-shadow(0 2px 10px rgba(black, 0.2) );
+				&:hover {
+					@include box-shadow(0 1px 5px rgba(black, 0.3) );
+				}
+			}
+		}
+
+		&--folder-is-taking-moving-files {
+			cursor: pointer;
+			@include box-shadow(0 2px 10px rgba(black, 0.2) );
+			&:hover {
+				@include box-shadow(0 1px 5px rgba(black, 0.3) );
+			}
+		}
+
+		&--to-be-moved {
+			border: 2px solid $color-green;
+		}
 
 		@include border-radius( 4px );
 

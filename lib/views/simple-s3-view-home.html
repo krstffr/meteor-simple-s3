@@ -30,6 +30,10 @@
 		</h1>
 
 		<p>
+			{{ currentDir 'numberOfFiles' }} files, {{ currentDir 'totalSize' }} kb.
+		</p>
+
+		<p>
 			{{#each buttons 'main' }}
 				<button class="{{ cssClass }}">
 					{{ buttonText }}

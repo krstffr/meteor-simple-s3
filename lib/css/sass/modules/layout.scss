@@ -53,7 +53,7 @@
 			top: 0.7em;
 			background: #FFF;
 			padding: 0.3em;
-			border: 1px solid #ddd;
+			border: 1px solid $color-gray-light;
 
 			@include border-radius( 3px );
 
@@ -89,6 +89,17 @@
 
 		}
 
+		&--sort-buttons {
+			text-align: right;
+			background: rgba(white, 0.5);
+			button {
+				background: white;
+				&.simple-s3__sort-by-button--chosen {
+					background: $color-green;
+				}
+			}
+		}
+
 		&:hover {
 			.simple-s3__bucket-item__text-content {
 				&__buttons {
@@ -120,7 +131,7 @@
 		&__file-extension {
 			float: right;
 			width: 85px;
-			background: #eee;
+			background: $color-gray-light;
 			text-decoration: none;
 			font-weight: normal;
 			@extend %button-main-stuff;

@@ -59,9 +59,9 @@
 
 		{{/if}}
 
-		<div class="simple-s3__bucket-item">
+		<div class="simple-s3__bucket-item simple-s3__bucket-item--sort-buttons">
 			{{#each sortButtons }}
-				<button class="simple-s3__sort-by-button" data-sort-by="{{ sortBy }}">
+				<button class="simple-s3__sort-by-button{{#if isCurrentSortOrder }} simple-s3__sort-by-button--chosen{{/if}}" data-sort-by="{{ sortBy }}">
 					Sort by {{ sortBy }}
 				</button>
 			{{/each}}

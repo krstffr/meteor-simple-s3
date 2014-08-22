@@ -17,9 +17,9 @@
 						<a href="#">x</a>
 					</span>
 				{{/if}}
-				{{#if isLoading }}
+				{{#if loadingMessage }}
 					<span class="simple-s3__headline__loading-indicator">
-						Loading…
+						{{ loadingMessage }}
 					</span>
 				{{/if}}
 				{{#if errorMessage }}

@@ -65,7 +65,7 @@
 
 		{{#each bucketItems }}
 
-			<div class="simple-s3__bucket-item  {{#if isImageAndPreview }}simple-s3__bucket-item--preview-image{{/if }}">
+			<div class="simple-s3__bucket-item  {{#if isImageAndPreview }}simple-s3__bucket-item--preview-image{{/if }}" data-key="{{ Key }}">
 
 				{{#if emptyMessage }}
 					<div class="simple-s3__bucket-item__text-content">
@@ -91,9 +91,9 @@
 
 					<div class="simple-s3__bucket-item__text-content__buttons">
 
-						{{#each buttons 'bucketListItem' }}
+						{{#each buttons 'bucketListItem' this }}
 
-							<button class="{{ cssClass }}" data-key="{{ ../Key }}">
+							<button class="{{ cssClass }}">
 								{{ buttonText }}
 							</button>
 

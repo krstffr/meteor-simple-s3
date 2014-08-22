@@ -95,7 +95,7 @@
 }
 /* line 41, ../../sass/modules/layout.scss */
 .simple-s3 .simple-s3__headline__file-extension-filtered a {
-  opacity: 0.1;
+  opacity: 0.35;
 }
 /* line 45, ../../sass/modules/layout.scss */
 .simple-s3 .simple-s3__headline__file-extension-filtered:hover a {
@@ -144,20 +144,28 @@
 .simple-s3 .simple-s3__bucket-item:hover .simple-s3__bucket-item__text-content__buttons {
   display: inline-block;
 }
-/* line 101, ../../sass/modules/layout.scss */
+/* line 96, ../../sass/modules/layout.scss */
+.simple-s3 .simple-s3__bucket-item:hover .simple-s3__bucket-item__text-content__buttons button {
+  opacity: 0.35;
+}
+/* line 98, ../../sass/modules/layout.scss */
+.simple-s3 .simple-s3__bucket-item:hover .simple-s3__bucket-item__text-content__buttons button:hover {
+  opacity: 1;
+}
+/* line 107, ../../sass/modules/layout.scss */
 .simple-s3 .simple-s3__bucket-item__text-content p {
   float: left;
   display: inline-block;
   padding: 0.6em 0 0.45em 0.5em;
   vertical-align: middle;
 }
-/* line 107, ../../sass/modules/layout.scss */
+/* line 113, ../../sass/modules/layout.scss */
 .simple-s3 .simple-s3__bucket-item__text-content__buttons {
   display: none;
   float: right;
   margin-right: 0.3em;
 }
-/* line 114, ../../sass/modules/layout.scss */
+/* line 120, ../../sass/modules/layout.scss */
 .simple-s3 .simple-s3__bucket-item__file-extension {
   float: right;
   width: 85px;
@@ -165,24 +173,24 @@
   text-decoration: none;
   font-weight: normal;
 }
-/* line 123, ../../sass/modules/layout.scss */
+/* line 129, ../../sass/modules/layout.scss */
 .simple-s3 .simple-s3__bucket-item__img-preview {
   float: right;
   max-height: 120px;
   margin-right: 0.3em;
 }
-/* line 129, ../../sass/modules/layout.scss */
+/* line 135, ../../sass/modules/layout.scss */
 .simple-s3 .simple-s3__bucket-item__filter-directory-link {
   color: #999;
   font-weight: normal;
 }
-/* line 136, ../../sass/modules/layout.scss */
+/* line 142, ../../sass/modules/layout.scss */
 .simple-s3 button {
   background: #80da9d;
   border: none;
   cursor: pointer;
 }
-/* line 143, ../../sass/modules/layout.scss */
+/* line 149, ../../sass/modules/layout.scss */
 .simple-s3 button:hover {
   opacity: 0.8;
 }

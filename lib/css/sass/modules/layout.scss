@@ -95,6 +95,16 @@
 			@include box-shadow(0 5px 25px rgba(black, 0.15) );
 		}
 
+		&--hide-buttons {
+			button {
+				display: none;
+			}
+		}
+
+		&__special-message {
+			color: $color-green;
+		}
+
 		&--directory {
 			&.simple-s3__bucket-item--movable {
 				opacity: 0.5;
@@ -106,6 +116,7 @@
 				cursor: pointer;
 				@include box-shadow(0 2px 10px rgba(black, 0.2) );
 				&:hover {
+					background: $color-green-light;
 					@include box-shadow(0 1px 5px rgba(black, 0.3) );
 				}
 			}
@@ -115,12 +126,17 @@
 			cursor: pointer;
 			@include box-shadow(0 2px 10px rgba(black, 0.2) );
 			&:hover {
+				background: $color-green-light;
 				@include box-shadow(0 1px 5px rgba(black, 0.3) );
 			}
 		}
 
 		&--to-be-moved {
 			border: 2px solid $color-green;
+		}
+
+		&--not-the-file-to-be-moved {
+			opacity: 0.5;
 		}
 
 		@include border-radius( 4px );
@@ -195,7 +211,32 @@
 
 	}
 
-	button {
+	form {
+		background: #fff;
+		padding: 0.4em 0.4em 0.45em;
+		margin: 0.3em 0 1em;
+	}
+
+	input[type="file"] {
+		@extend %button-main-stuff;
+		background: $color-green-light;
+		padding: 0.6em 13.5em 0.55em 0.5em;
+		vertical-align: top;
+	}
+
+	input[type="text"] {
+		@extend %button-main-stuff;
+		border: none;
+		outline: none;
+		vertical-align: top;
+		text-align: left;
+		border: 1px solid $color-gray-light;
+		padding: 0.6em 0.5em 0.55em 0.5em;
+		width: 30em;
+	}
+
+	button,
+	input[type="submit"] {
 		background: $color-green;
 		border: none;
 		cursor: pointer;

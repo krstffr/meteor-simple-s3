@@ -19,6 +19,10 @@
 	padding: 1em;
 	color: #444;
 
+	&__body {
+		background: white;
+	}
+
 	a {
 		color: #000;
 		font-weight: bold;

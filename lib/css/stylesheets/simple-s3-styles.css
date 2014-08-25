@@ -92,25 +92,31 @@
 .simple-s3 p {
   padding: 0 0 .7em;
 }
-/* line 31, ../sass/modules/layout.scss */
+/* line 33, ../sass/modules/layout.scss */
+.simple-s3--disabled-ui button,
+.simple-s3--disabled-ui .simple-s3__bucket-items {
+  opacity: 0.3;
+  pointer-events: none;
+}
+/* line 40, ../sass/modules/layout.scss */
 .simple-s3 .simple-s3__headline {
   font-size: 1.6em;
   padding: 0 0 .5em;
 }
-/* line 36, ../sass/modules/layout.scss */
+/* line 45, ../sass/modules/layout.scss */
 .simple-s3 .simple-s3__headline__folder-filter-link {
   color: #999;
   font-weight: normal;
 }
-/* line 41, ../sass/modules/layout.scss */
+/* line 50, ../sass/modules/layout.scss */
 .simple-s3 .simple-s3__headline__file-extension-filtered a {
   opacity: 0.35;
 }
-/* line 45, ../sass/modules/layout.scss */
+/* line 54, ../sass/modules/layout.scss */
 .simple-s3 .simple-s3__headline__file-extension-filtered:hover a {
   opacity: 1;
 }
-/* line 50, ../sass/modules/layout.scss */
+/* line 59, ../sass/modules/layout.scss */
 .simple-s3 .simple-s3__headline__loading-indicator {
   position: fixed;
   right: 0.7em;
@@ -123,22 +129,17 @@
   -webkit-border-radius: 3px;
   border-radius: 3px;
 }
-/* line 61, ../sass/modules/layout.scss */
+/* line 70, ../sass/modules/layout.scss */
 .simple-s3 .simple-s3__headline__loading-indicator--error {
   color: #d22;
 }
-/* line 67, ../sass/modules/layout.scss */
+/* line 76, ../sass/modules/layout.scss */
 .simple-s3 em {
   font-style: italic;
 }
-/* line 71, ../sass/modules/layout.scss */
+/* line 80, ../sass/modules/layout.scss */
 .simple-s3 strong {
   font-weight: bold;
-}
-/* line 77, ../sass/modules/layout.scss */
-.simple-s3 .simple-s3__bucket-items--disabled {
-  opacity: 0.3;
-  pointer-events: none;
 }
 /* line 84, ../sass/modules/layout.scss */
 .simple-s3 .simple-s3__bucket-item {

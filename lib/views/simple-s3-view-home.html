@@ -1,6 +1,6 @@
 <template name="simpleS3ViewHome">
 
-	<div class="simple-s3">
+	<div class="simple-s3 {{ disabledUI }}">
 
 		<h1 class="simple-s3__headline">
 			Contents of: 
@@ -67,7 +67,7 @@
 			{{/each}}
 		</div>
 
-		<div class="simple-s3__bucket-items {{ disabledUI }}">
+		<div class="simple-s3__bucket-items">
 
 			{{#each bucketItems }}
 

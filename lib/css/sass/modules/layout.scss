@@ -28,6 +28,15 @@
 		padding: 0 0 .7em;
 	}
 
+	&--disabled-ui {
+
+		button,
+		.simple-s3__bucket-items {
+			opacity: 0.3;
+			pointer-events: none;
+		}
+	}
+
 	& &__headline {
 
 		font-size: 1.6em;
@@ -70,15 +79,6 @@
 
 	strong {
 		font-weight: bold;
-	}
-
-	& &__bucket-items {
-
-		&--disabled {
-			opacity: 0.3;
-			pointer-events: none;
-		}
-
 	}
 
 	& &__bucket-item {

@@ -20,7 +20,8 @@
 	color: #444;
 
 	&__body {
-		background: white;
+		background: $color-green-light;
+		margin: 0;
 	}
 
 	a {

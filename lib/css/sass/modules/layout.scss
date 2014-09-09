@@ -6,6 +6,7 @@
 	font-size: 0.9em;
 	font-family: inherit;
 
+	@include box-shadow( none );
 	@include border-radius( 2px );
 }
 

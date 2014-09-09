@@ -14,12 +14,15 @@
   text-align: center;
   font-size: 0.9em;
   font-family: inherit;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
   -moz-border-radius: 2px;
   -webkit-border-radius: 2px;
   border-radius: 2px;
 }
 
-/* line 12, ../sass/modules/layout.scss */
+/* line 13, ../sass/modules/layout.scss */
 .simple-s3 {
   font-size: 15px;
   font-family: sans-serif;
@@ -84,45 +87,45 @@
 .simple-s3 article, .simple-s3 aside, .simple-s3 details, .simple-s3 figcaption, .simple-s3 figure, .simple-s3 footer, .simple-s3 header, .simple-s3 hgroup, .simple-s3 main, .simple-s3 menu, .simple-s3 nav, .simple-s3 section, .simple-s3 summary {
   display: block;
 }
-/* line 22, ../sass/modules/layout.scss */
+/* line 23, ../sass/modules/layout.scss */
 .simple-s3__body  {
   background: #d9f3e1;
   margin: 0;
 }
-/* line 27, ../sass/modules/layout.scss */
+/* line 28, ../sass/modules/layout.scss */
 .simple-s3 a {
   color: #000;
   font-weight: bold;
 }
-/* line 32, ../sass/modules/layout.scss */
+/* line 33, ../sass/modules/layout.scss */
 .simple-s3 p {
   padding: 0 0 .7em;
 }
-/* line 38, ../sass/modules/layout.scss */
+/* line 39, ../sass/modules/layout.scss */
 .simple-s3--disabled-ui button,
 .simple-s3--disabled-ui .simple-s3__bucket-items {
   opacity: 0.3;
   pointer-events: none;
 }
-/* line 45, ../sass/modules/layout.scss */
+/* line 46, ../sass/modules/layout.scss */
 .simple-s3 .simple-s3__headline {
   font-size: 1.6em;
   padding: 0 0 .5em;
 }
-/* line 50, ../sass/modules/layout.scss */
+/* line 51, ../sass/modules/layout.scss */
 .simple-s3 .simple-s3__headline__folder-filter-link {
   color: #999;
   font-weight: normal;
 }
-/* line 55, ../sass/modules/layout.scss */
+/* line 56, ../sass/modules/layout.scss */
 .simple-s3 .simple-s3__headline__file-extension-filtered a {
   opacity: 0.35;
 }
-/* line 59, ../sass/modules/layout.scss */
+/* line 60, ../sass/modules/layout.scss */
 .simple-s3 .simple-s3__headline__file-extension-filtered:hover a {
   opacity: 1;
 }
-/* line 64, ../sass/modules/layout.scss */
+/* line 65, ../sass/modules/layout.scss */
 .simple-s3 .simple-s3__headline__loading-indicator {
   position: fixed;
   right: 0.7em;
@@ -135,19 +138,19 @@
   -webkit-border-radius: 3px;
   border-radius: 3px;
 }
-/* line 75, ../sass/modules/layout.scss */
+/* line 76, ../sass/modules/layout.scss */
 .simple-s3 .simple-s3__headline__loading-indicator--error {
   color: #d22;
 }
-/* line 81, ../sass/modules/layout.scss */
+/* line 82, ../sass/modules/layout.scss */
 .simple-s3 em {
   font-style: italic;
 }
-/* line 85, ../sass/modules/layout.scss */
+/* line 86, ../sass/modules/layout.scss */
 .simple-s3 strong {
   font-weight: bold;
 }
-/* line 89, ../sass/modules/layout.scss */
+/* line 90, ../sass/modules/layout.scss */
 .simple-s3 .simple-s3__bucket-item {
   background: #fff;
   padding: 0.3em;
@@ -158,7 +161,7 @@
   -webkit-border-radius: 4px;
   border-radius: 4px;
 }
-/* line 97, ../sass/modules/layout.scss */
+/* line 98, ../sass/modules/layout.scss */
 .simple-s3 .simple-s3__bucket-item.ui-draggable-dragging {
   background: #eeeeee;
   z-index: 100;
@@ -166,108 +169,108 @@
   -webkit-box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
   box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
 }
-/* line 104, ../sass/modules/layout.scss */
+/* line 105, ../sass/modules/layout.scss */
 .simple-s3 .simple-s3__bucket-item--hide-buttons button {
   display: none;
 }
-/* line 109, ../sass/modules/layout.scss */
+/* line 110, ../sass/modules/layout.scss */
 .simple-s3 .simple-s3__bucket-item__special-message {
   color: #80da9d;
 }
-/* line 113, ../sass/modules/layout.scss */
+/* line 114, ../sass/modules/layout.scss */
 .simple-s3 .simple-s3__bucket-item--directory {
   cursor: pointer;
 }
-/* line 116, ../sass/modules/layout.scss */
+/* line 117, ../sass/modules/layout.scss */
 .simple-s3 .simple-s3__bucket-item--directory:hover {
   -moz-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
   -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
 }
-/* line 120, ../sass/modules/layout.scss */
+/* line 121, ../sass/modules/layout.scss */
 .simple-s3 .simple-s3__bucket-item--directory.simple-s3__bucket-item--movable {
   opacity: 0.5;
 }
-/* line 126, ../sass/modules/layout.scss */
+/* line 127, ../sass/modules/layout.scss */
 .simple-s3 .simple-s3__bucket-item--file.simple-s3__bucket-item--movable {
   cursor: pointer;
   -moz-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
   -webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
-/* line 129, ../sass/modules/layout.scss */
+/* line 130, ../sass/modules/layout.scss */
 .simple-s3 .simple-s3__bucket-item--file.simple-s3__bucket-item--movable:hover {
   background: #d9f3e1;
   -moz-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
   -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
 }
-/* line 136, ../sass/modules/layout.scss */
+/* line 137, ../sass/modules/layout.scss */
 .simple-s3 .simple-s3__bucket-item--folder-is-taking-moving-files {
   cursor: pointer;
   -moz-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
   -webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
-/* line 139, ../sass/modules/layout.scss */
+/* line 140, ../sass/modules/layout.scss */
 .simple-s3 .simple-s3__bucket-item--folder-is-taking-moving-files:hover {
   background: #d9f3e1;
   -moz-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
   -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
 }
-/* line 145, ../sass/modules/layout.scss */
+/* line 146, ../sass/modules/layout.scss */
 .simple-s3 .simple-s3__bucket-item--to-be-moved {
   border: 2px solid #80da9d;
 }
-/* line 149, ../sass/modules/layout.scss */
+/* line 150, ../sass/modules/layout.scss */
 .simple-s3 .simple-s3__bucket-item--not-the-file-to-be-moved {
   opacity: 0.5;
 }
-/* line 157, ../sass/modules/layout.scss */
+/* line 158, ../sass/modules/layout.scss */
 .simple-s3 .simple-s3__bucket-item--preview-image .simple-s3__bucket-item__file-extension {
   padding-top: 3.3em;
   height: 120px;
 }
-/* line 164, ../sass/modules/layout.scss */
+/* line 165, ../sass/modules/layout.scss */
 .simple-s3 .simple-s3__bucket-item--sort-buttons {
   text-align: right;
   background: rgba(255, 255, 255, 0.5);
 }
-/* line 167, ../sass/modules/layout.scss */
+/* line 168, ../sass/modules/layout.scss */
 .simple-s3 .simple-s3__bucket-item--sort-buttons button {
   background: white;
 }
-/* line 169, ../sass/modules/layout.scss */
+/* line 170, ../sass/modules/layout.scss */
 .simple-s3 .simple-s3__bucket-item--sort-buttons button.simple-s3__sort-by-button--chosen {
   background: #80da9d;
 }
-/* line 177, ../sass/modules/layout.scss */
+/* line 178, ../sass/modules/layout.scss */
 .simple-s3 .simple-s3__bucket-item:hover .simple-s3__bucket-item__text-content__buttons {
   display: inline-block;
 }
-/* line 179, ../sass/modules/layout.scss */
+/* line 180, ../sass/modules/layout.scss */
 .simple-s3 .simple-s3__bucket-item:hover .simple-s3__bucket-item__text-content__buttons button {
   opacity: 0.35;
 }
-/* line 181, ../sass/modules/layout.scss */
+/* line 182, ../sass/modules/layout.scss */
 .simple-s3 .simple-s3__bucket-item:hover .simple-s3__bucket-item__text-content__buttons button:hover {
   opacity: 1;
 }
-/* line 190, ../sass/modules/layout.scss */
+/* line 191, ../sass/modules/layout.scss */
 .simple-s3 .simple-s3__bucket-item__text-content p {
   float: left;
   display: inline-block;
   padding: 0.6em 0 0.45em 0.5em;
   vertical-align: middle;
 }
-/* line 196, ../sass/modules/layout.scss */
+/* line 197, ../sass/modules/layout.scss */
 .simple-s3 .simple-s3__bucket-item__text-content__buttons {
   display: none;
   float: right;
   margin-right: 0.3em;
 }
-/* line 203, ../sass/modules/layout.scss */
+/* line 204, ../sass/modules/layout.scss */
 .simple-s3 .simple-s3__bucket-item__file-extension {
   float: right;
   width: 85px;
@@ -275,31 +278,31 @@
   text-decoration: none;
   font-weight: normal;
 }
-/* line 212, ../sass/modules/layout.scss */
+/* line 213, ../sass/modules/layout.scss */
 .simple-s3 .simple-s3__bucket-item__img-preview {
   float: right;
   max-height: 120px;
   margin-right: 0.3em;
 }
-/* line 218, ../sass/modules/layout.scss */
+/* line 219, ../sass/modules/layout.scss */
 .simple-s3 .simple-s3__bucket-item__filter-directory-link {
   color: #999999;
   font-weight: normal;
   text-decoration: none;
 }
-/* line 226, ../sass/modules/layout.scss */
+/* line 227, ../sass/modules/layout.scss */
 .simple-s3 form {
   background: #fff;
   padding: 0.4em 0.4em 0.45em;
   margin: 0.3em 0 1em;
 }
-/* line 232, ../sass/modules/layout.scss */
+/* line 233, ../sass/modules/layout.scss */
 .simple-s3 input[type="file"] {
   background: #d9f3e1;
   padding: 0.6em 13.5em 0.55em 0.5em;
   vertical-align: top;
 }
-/* line 239, ../sass/modules/layout.scss */
+/* line 240, ../sass/modules/layout.scss */
 .simple-s3 input[type="text"] {
   border: none;
   outline: none;
@@ -309,14 +312,14 @@
   padding: 0.6em 0.5em 0.55em 0.5em;
   width: 30em;
 }
-/* line 250, ../sass/modules/layout.scss */
+/* line 251, ../sass/modules/layout.scss */
 .simple-s3 button,
 .simple-s3 input[type="submit"] {
   background: #80da9d;
   border: none;
   cursor: pointer;
 }
-/* line 258, ../sass/modules/layout.scss */
+/* line 259, ../sass/modules/layout.scss */
 .simple-s3 button:hover,
 .simple-s3 input[type="submit"]:hover {
   opacity: 0.8;

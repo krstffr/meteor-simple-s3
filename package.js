@@ -7,9 +7,8 @@ Package.describe({
 
 Package.onUse(function (api) {
 
-  api.use('templating', 'client');
   api.use('mrt:aws-sdk@0.2.0', 'server');
-  api.use('underscore', ['client', 'server']);
+  api.imply('templating');
 
   api.add_files('lib/simple-s3-client.js', ['client']);
   api.add_files('lib/simple-s3-server.js', ['server']);

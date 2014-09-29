@@ -7,6 +7,8 @@ Package.describe({
 
 Package.onUse(function (api) {
 
+  api.versionsFrom("METEOR@0.9.0");
+
   api.use('mrt:aws-sdk@0.2.0', 'server');
   api.imply('templating');
 
@@ -19,11 +21,7 @@ Package.onUse(function (api) {
   // CSS
   api.add_files(['lib/css/stylesheets/simple-s3-styles.css'], 'client');
 
-  if (typeof api.export !== 'undefined') {
-
-    // The main object.
-    api.export('SimpleS3', 'client');
-
-  }
+  // The main object.
+  api.export('SimpleS3', 'client');
 
 });

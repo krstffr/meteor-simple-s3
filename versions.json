@@ -6,15 +6,15 @@
     ],
     [
       "blaze",
-      "2.0.0"
+      "2.0.1"
     ],
     [
       "deps",
-      "1.0.3"
+      "1.0.4"
     ],
     [
       "ejson",
-      "1.0.2"
+      "1.0.3"
     ],
     [
       "geojson-utils",
@@ -38,15 +38,11 @@
     ],
     [
       "meteor",
-      "1.1.0"
+      "1.1.1"
     ],
     [
       "minimongo",
       "1.0.3"
-    ],
-    [
-      "mrt:aws-sdk",
-      "0.2.0"
     ],
     [
       "observe-sequence",
@@ -57,16 +53,24 @@
       "1.0.0"
     ],
     [
+      "peerlibrary:aws-sdk",
+      "2.0.17-1"
+    ],
+    [
+      "peerlibrary:blocking",
+      "0.4.2"
+    ],
+    [
       "random",
       "1.0.0"
     ],
     [
       "reactive-var",
-      "1.0.1"
+      "1.0.2"
     ],
     [
       "templating",
-      "1.0.6"
+      "1.0.7"
     ],
     [
       "tracker",

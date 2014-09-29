@@ -1,11 +1,14 @@
 Package.describe({
-  "summary": "UI for viewing, uploading and deleting files from your AWS S3."
+  name: "krstffr:simple-s3",
+  summary: "UI for viewing, uploading and deleting files from your AWS S3.",
+  git: "https://github.com/krstffr/meteor-simple-s3",
+  version: "0.0.1"
 });
 
-Package.on_use(function (api) {
+Package.onUse(function (api) {
 
-	api.use('templating', 'client');
-  api.use('aws-sdk', 'server');
+  api.use('templating', 'client');
+  api.use('mrt:aws-sdk@0.2.0', 'server');
   api.use('underscore', ['client', 'server']);
 
   api.add_files('lib/simple-s3-client.js', ['client']);

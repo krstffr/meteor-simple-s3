@@ -1,0 +1,6 @@
+{
+	"AWSAccessKeyId": "XXX",
+	"AWSSecretAccessKey": "XXX",
+	"AWSbucket": "cool-test-bucket",
+	"AWSregion": "eu-west-1"
+}

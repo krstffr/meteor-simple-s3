@@ -9,9 +9,33 @@
 			<h1 class="simple-s3__headline">Simple S3</h1>
 			
 			{{#each buttons 'main' }}
-				<button class="{{ cssClass }} simple-s3__left-col__button">
+
+				<button class="{{ cssClass }} simple-s3__left-col__button {{#if showForm showExtraHtml }}simple-s3__left-col__button--active{{/if}}">
+
 					{{ buttonText }}
+
+					{{#if showForm 'show-upload-form' }}
+						<i class="fa fa-times-circle simple-s3__color--red"></i>
+						<form class="simple-s3__left-col__button__extra-html simple-s3__upload-form" enctype="multipart/form-data">
+							<input class="simple-s3__upload-form__file" type="file" multiple />
+							<input type="submit" />
+						</form>
+					{{/if}}
+
+					{{#if showForm 'show-create-folder-form' }}
+						<i class="fa fa-times-circle simple-s3__color--red"></i>
+						<form class="simple-s3__left-col__button__extra-html simple-s3__create-folder-form" enctype="multipart/form-data">
+							<input class="simple-s3__create-folder-form__folder-name" type="text" placeholder="Folder name" />
+							<input type="submit" />
+						</form>
+					{{/if}}
+
+					{{#if showForm 'show-image-previews' }}
+						<i class="fa fa-image simple-s3__color--blue simple-s3__left-col__button__extra-html"></i>
+					{{/if}}
+
 					<i class="fa {{ faIconClass }}"></i>
+
 				</button>
 			{{/each}}
 
@@ -33,7 +57,7 @@
 				<div class="simple-s3__headline__right">
 
 					<em class="simple-s3__headline__file-size">
-						{{ currentDir 'numberOfFiles' }} files, {{ currentDir 'totalSize' }} kb.
+						{{ currentDir 'numberOfFiles' }} items, {{ currentDir 'totalSize' }} kb.
 					</em>
 
 					<a href="#">
@@ -119,6 +143,13 @@
 
 		<div class="simple-s3__status">
 			<h1 class="simple-s3__headline">
+				{{#if progress }}
+				<div class="simple-s3__status__progress">
+			    <div class="simple-s3__status__progress-bar" role="progressbar" aria-valuenow="{{progress}}" aria-valuemin="0" aria-valuemax="100" style="width: {{progress}}%;">
+			      <span class="sr-only">{{progress}}% Complete</span>
+			    </div>
+			  </div>
+			  {{/if}}
 				Status:
 				{{#if loadingMessage }}
 					<span class="simple-s3__status__message">
@@ -171,7 +202,7 @@
 			</h1>
 
 			<p>
-				{{ currentDir 'numberOfFiles' }} files, {{ currentDir 'totalSize' }} kb.
+				{{ currentDir 'numberOfFiles' }} items, {{ currentDir 'totalSize' }} kb.
 			</p>
 
 			<p>

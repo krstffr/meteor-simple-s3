@@ -34,7 +34,11 @@
 			margin-bottom: 1px;
 			background: $color-gray-mid;
 			color: inherit;
-			&:hover {
+			
+			@include transition( 0.15s ease all );
+
+			&:hover,
+			&--active {
 				background: $color-gray-dark;
 				color: $color-blue-light;
 				i {
@@ -45,6 +49,9 @@
 				color: $color-gray-mid-ligther;
 				float: right;
 				margin: 0.15em 0 0;
+			}
+			.simple-s3__left-col__button__extra-html + i {
+				display: none;
 			}
 		}
 	}
@@ -328,6 +335,15 @@
 		font-family: FontAwesome;
 		font-style: normal;
 		font-weight: normal;
+	}
+
+	&__color{
+		&--red{
+			color: $color-red !important;
+		}
+		&--blue{
+			color: $color-blue-light !important;
+		}
 	}
 	
 }

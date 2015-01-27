@@ -13,7 +13,7 @@ Package.onUse(function (api) {
 
   api.versionsFrom("METEOR@0.9.0");
 
-  api.use(['templating', 'edgee:slingshot@0.4.1', 'pfafman:font-awesome-4@4.2.0']);
+  api.use(['reactive-var', 'templating', 'edgee:slingshot@0.4.1', 'pfafman:font-awesome-4@4.2.0']);
 
   // Files on both server/client
   api.add_files([

@@ -119,17 +119,20 @@ Template.simpleS3ViewHome.helpers({
 			{
 				buttonText: 'Upload file',
 				cssClass: 'simple-s3__upload-file',
-				faIconClass: 'fa-file'
+				faIconClass: 'fa-file',
+				showExtraHtml: 'show-upload-form'
 			},
 			{
 				buttonText: 'Create folder',
 				cssClass: 'simple-s3__create-folder',
-				faIconClass: 'fa-folder'
+				faIconClass: 'fa-folder',
+				showExtraHtml: 'show-create-folder-form'
 			},
 			{
 				buttonText: 'Toggle image previews',
 				cssClass: 'simple-s3__show-image-previews',
-				faIconClass: 'fa-image'
+				faIconClass: 'fa-image',
+				showExtraHtml: 'show-image-previews'
 			},
 			{
 				buttonText: 'Move file',
@@ -220,15 +223,26 @@ Template.simpleS3ViewHome.helpers({
 			bucketItems = [{ emptyMessage: 'No files… yet.' }];
 		return bucketItems;
 	},
+	showForm: function ( formName ) {
+		return Session.get('simple-s3__'+formName) && this.showExtraHtml === formName;
+	},
+	buttonHasNoForm: function () {
+		return !this.showExtraHtml;
+	},
 	showUploadForm: function () {
-		return Session.get('simple-s3__show-upload-form');
+		return Session.get('simple-s3__show-upload-form') && this.showUploadForm;
 	},
 	showCreateFolderForm: function () {
 		return Session.get('simple-s3__show-create-folder-form');
 	},
 	filter: function ( key ) {
 		return SimpleS3.filter.get( key );
-	}
+	},
+	progress: function () {
+		if (SimpleS3.uploader.get())
+			return Math.round(SimpleS3.uploader.get().progress() * 100);
+		return false;
+  }
 });
 
 Template.simpleS3ViewHome.events({
@@ -260,6 +274,9 @@ Template.simpleS3ViewHome.events({
 			"Copy the link below.",
 			'http://'+Session.get('simple-s3__bucket-items').Name+'.s3.amazonaws.com/'+this.key
 			);
+	},
+	'click input': function ( e ) {
+		e.stopImmediatePropagation();
 	},
 	'submit .simple-s3__upload-form': function ( e, tmpl ) {
 		e.preventDefault();

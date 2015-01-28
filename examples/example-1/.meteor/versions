@@ -23,7 +23,7 @@ http@1.0.10
 id-map@1.0.2
 jquery@1.11.3
 json@1.0.2
-krstffr:simple-s3@0.1.2
+krstffr:simple-s3@0.1.1
 launch-screen@1.0.1
 livedata@1.0.12
 localstorage@1.0.2

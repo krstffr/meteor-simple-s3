@@ -2,7 +2,7 @@ Package.describe({
   name: "krstffr:simple-s3",
   summary: "UI for viewing, uploading and deleting files from your AWS S3.",
   git: "https://github.com/krstffr/meteor-simple-s3",
-  version: "0.0.5"
+  version: "0.1.0"
 });
 
 Npm.depends({
@@ -13,8 +13,7 @@ Package.onUse(function (api) {
 
   api.versionsFrom("METEOR@0.9.0");
 
-  api.use('templating');
-  api.use('edgee:slingshot@0.4.1');
+  api.use(['reactive-var', 'templating', 'edgee:slingshot@0.4.1', 'pfafman:font-awesome-4@4.2.0']);
 
   // Files on both server/client
   api.add_files([

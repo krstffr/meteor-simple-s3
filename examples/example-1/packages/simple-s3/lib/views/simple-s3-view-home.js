@@ -115,6 +115,11 @@ Template.simpleS3ViewHome.helpers({
 	buttons: function ( buttonsKey, context ) {
 		var buttons =
 		{
+			sortButtons: [
+			{ sortBy: 'Filename' },
+			{ sortBy: 'Size' },
+			{ sortBy: 'FileExtension' }
+			],
 			main: [
 			{
 				buttonText: 'Upload file',
@@ -133,6 +138,13 @@ Template.simpleS3ViewHome.helpers({
 				cssClass: 'simple-s3__show-image-previews',
 				faIconClass: 'fa-image',
 				showExtraHtml: 'show-image-previews'
+			},
+			{
+				buttonText: 'Sort by: ',
+				dynamicText: SimpleS3.bucketList.getCurrentSortOrder().sortBy,
+				cssClass: 'simple-s3__show-sort-options',
+				faIconClass: 'fa-sort',
+				showExtraHtml: 'show-sort-options'
 			},
 			{
 				buttonText: 'Move file',
@@ -167,6 +179,7 @@ Template.simpleS3ViewHome.helpers({
 			}
 			]
 		};
+
 		var userAddedButtons = SimpleS3.ui.extrabuttons.getAll();
 		if (userAddedButtons) {
 			var userAddedButtonsKeys = _(userAddedButtons).keys();
@@ -196,16 +209,8 @@ Template.simpleS3ViewHome.helpers({
 		}
 		return _( buttons[buttonsKey] ).compact();
 	},
-	sortButtons: function () {
-		var sortBys = [
-		{ sortBy: 'Filename' },
-		{ sortBy: 'Size' },
-		{ sortBy: 'FileExtension' }
-		];
-		return sortBys;
-	},
 	sizeInKb: function () {
-		return Math.floor( this.Size / 10 ) / 100;
+		return (this.Size / 1000).toFixed(1);
 	},
 	previews: function () {
 		return Session.get('simple-s3__show-image-previews');
@@ -331,5 +336,8 @@ Template.simpleS3ViewHome.events({
 	},
 	'click .simple-s3__show-image-previews': function () {
 		Session.set('simple-s3__show-image-previews', !Session.get('simple-s3__show-image-previews') );
+	},
+	'click .simple-s3__show-sort-options': function () {
+		Session.set('simple-s3__show-sort-options', !Session.get('simple-s3__show-sort-options') );
 	}
 });

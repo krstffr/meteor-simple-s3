@@ -1,7 +1,7 @@
 @import "../base/vars";
 	
 // Add Google font
-@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700,400italic);
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic);
 
 %button-main-stuff {
 	padding: $padding-default;
@@ -21,6 +21,13 @@
 	font-weight: 300;
 	color: $color-gray-text;
 
+	@media (max-width: 55em) {
+		font-size: 15px;
+	}
+	@media (max-width: 45em) {
+		font-size: 13px;
+	}
+
 	& &__left-col {
 
 		position: fixed;
@@ -30,6 +37,7 @@
 		color: #fff;
 
 		&__button{
+
 			width: 100%;
 			margin-bottom: 1px;
 			background: $color-gray-mid;
@@ -41,19 +49,39 @@
 			&--active {
 				background: $color-gray-dark;
 				color: $color-blue-light;
-				i {
+				& > i {
 					color: $color-blue-light;
 				}
 			}
+
 			i {
 				color: $color-gray-mid-ligther;
 				float: right;
 				margin: 0.15em 0 0;
 			}
+
 			.simple-s3__left-col__button__extra-html + i {
 				display: none;
 			}
+
+			&__inner{
+				margin: 0.7em 0 0.3em;
+				font-size: 0.9em;
+			}
+
+			form {
+				text-align: center;
+			}
+			input {
+				width: 80%;
+			}
+			button[type="submit"] {
+				max-width: 20%;
+				background: $color-blue-light;
+			}
+
 		}
+
 	}
 
 	& &__right-col {
@@ -64,21 +92,46 @@
 	}
 
 	& &__status {
+		
 		position: fixed;
 		bottom: 0;
 		right: 0;
-		left: $cols-width-ratio;
+		left: 0;
 		background: $color-gray-lighter;
+
+		@include transition( 0.1s ease opacity );
+
+		&--inactive{
+			opacity: 0.2;
+		}
+
+		&:hover{
+			opacity: 1;
+		}
+
 		h1 {
 			border-bottom: none;
 		}
 		&__message{
 			font-weight: 300;
+			&--error{
+				color: $color-red;
+			}
 		}
 		.fa {
 			float: right;
 			margin: 0.1em 0 0;
 		}
+
+		&__progress{}
+
+		&__progress-bar{
+			height: 100%;
+			position: absolute;
+			left: 0;
+			background: $color-blue-light;
+		}
+
 	}
 
 	a {
@@ -97,6 +150,7 @@
 		display: block;
 		font-weight: bold;
 		overflow: hidden;
+		position: relative;
 
 		&__file-extension-filtered {
 			a {
@@ -140,6 +194,7 @@
 	}
 
 	&--disabled-ui {
+		a,
 		button,
 		.simple-s3__bucket-items {
 			opacity: 0.3;
@@ -155,6 +210,13 @@
 		font-weight: bold;
 	}
 
+	& &__sort-by-button{
+		&--chosen {
+			color: $color-gray-dark;
+			background: $color-blue-light;
+		}
+	}
+
 	& &__bucket-items {
 		margin-bottom: 3em;
 	}
@@ -166,9 +228,13 @@
 		margin: 0 0 1px;
 		overflow: hidden;
 		position: relative;
+		max-height: $height-min-default;
 
 		&:hover {
 			color: $color-blue-light;
+			& > a {
+				color: inherit;
+			}
 		}
 
 		&:nth-child(odd) {
@@ -179,6 +245,11 @@
 			background: $color-gray-light;
 			z-index: 100;
 			// @include box-shadow(0 5px 25px rgba(black, 0.15) );
+		}
+
+		&__file-size{
+			margin-left: 0.7em;
+			color: $color-gray-light;
 		}
 
 		&--hide-buttons {
@@ -205,7 +276,8 @@
 				cursor: pointer;
 				@include box-shadow(0 2px 10px rgba(black, 0.2) );
 				&:hover {
-					background: $color-green-light;
+					background: $color-blue-light;
+					color: $color-gray-text;
 					@include box-shadow(0 1px 5px rgba(black, 0.3) );
 				}
 			}
@@ -215,17 +287,27 @@
 			cursor: pointer;
 			@include box-shadow(0 2px 10px rgba(black, 0.2) );
 			&:hover {
-				background: $color-green-light;
+				background: $color-blue-light;
+				color: $color-gray-text;
 				@include box-shadow(0 1px 5px rgba(black, 0.3) );
 			}
 		}
 
 		&--to-be-moved {
-			border: 2px solid $color-green;
+			background: $color-blue-light !important;
+			color: $color-gray-text;
+			pointer-events: none;
+			&:hover{
+				color: inherit;
+			}
 		}
 
 		&--not-the-file-to-be-moved {
-			opacity: 0.5;
+			opacity: 0.3;
+			pointer-events: none;
+			&:hover {
+				color: inherit;
+			}
 		}
 
 		&--preview-image {
@@ -235,17 +317,6 @@
 				height: 120px;
 			}
 
-		}
-
-		&--sort-buttons {
-			text-align: right;
-			background: rgba(white, 0.5);
-			button {
-				background: white;
-				&.simple-s3__sort-by-button--chosen {
-					background: $color-green;
-				}
-			}
 		}
 
 		&:hover {
@@ -289,44 +360,35 @@
 		}
 
 		&__filter-directory-link {
-			color: $color-gray-dark;
 			font-weight: normal;
-			text-decoration: none;
 		}
 
 	}
 
-	form {
-		background: #fff;
-		padding: 0.4em 0.4em 0.45em;
-		margin: 0.3em 0 1em;
-	}
-
 	input, button {
 		outline: none;
+		border: none;
+		font-size: 1em;
+		vertical-align: top;
+		// This is for making buttons/inputs the same height
+		min-height: $height-min-default;
 	}
 
 	input[type="file"] {
 		@extend %button-main-stuff;
-		background: $color-green-light;
-		padding: 0.6em 13.5em 0.55em 0.5em;
+		background: #fff;
+		padding-bottom: 0;
 		vertical-align: top;
 	}
 
 	input[type="text"] {
 		@extend %button-main-stuff;
-		border: none;
-		outline: none;
-		vertical-align: top;
 		text-align: left;
-		border: 1px solid $color-gray-light;
-		padding: 0.6em 0.5em 0.55em 0.5em;
-		width: 30em;
+		padding: $padding-default;
 	}
 
 	button,
 	input[type="submit"] {
-		border: none;
 		cursor: pointer;
 		@extend %button-main-stuff;
 	}

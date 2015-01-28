@@ -4,118 +4,139 @@
 
 	<div class="simple-s3 {{ disabledUI }}">
 
-		<h1 class="simple-s3__headline">
-			Contents of: 
-			<strong>
-				{{ bucketName }}
-			</strong>
-				{{#each filteredFoldersLinks }}
-					<a class="simple-s3__headline__folder-filter-link" href="#" data-filter-dir="{{ link }}">
-						{{ linkName }}</a> /
-				{{/each}}
-				{{#if filter 'FileExtension' }}
-					<span class="simple-s3__headline__file-extension-filtered">
-						*{{ filter 'FileExtension' }}
-						<a href="#">x</a>
-					</span>
-				{{/if}}
-				{{#if loadingMessage }}
-					<span class="simple-s3__headline__loading-indicator">
-						{{ loadingMessage }}
-					</span>
-				{{/if}}
-				{{#if errorMessage }}
-					<span class="simple-s3__headline__loading-indicator simple-s3__headline__loading-indicator--error">
-						{{ errorMessage }}
-					</span>
-				{{/if}}
-		</h1>
+		<div class="simple-s3__left-col">
 
-		<p>
-			{{ currentDir 'numberOfFiles' }} files, {{ currentDir 'totalSize' }} kb.
-		</p>
-
-		<p>
+			<h1 class="simple-s3__headline">Simple S3</h1>
+			
 			{{#each buttons 'main' }}
-				<button class="{{ cssClass }}">
-					{{ buttonText }}
-				</button>
-			{{/each}}
-		</p>
 
-		{{#if showUploadForm }}
+				<button class="{{ cssClass }} simple-s3__left-col__button {{#if showForm showExtraHtml }}simple-s3__left-col__button--active{{/if}}">
 
-			<form class="simple-s3__upload-form" enctype="multipart/form-data">
-				<input class="simple-s3__upload-form__file" type="file" multiple />
-				<input type="submit" />
-			</form>
+					{{ buttonText }} {{ dynamicText }}
 
-		{{/if}}
-
-		{{#if showCreateFolderForm }}
-
-			<form class="simple-s3__create-folder-form" enctype="multipart/form-data">
-				<input class="simple-s3__create-folder-form__folder-name" type="text" placeholder="Folder name" />
-				<input type="submit" />
-			</form>
-
-		{{/if}}
-
-		<div class="simple-s3__bucket-item simple-s3__bucket-item--sort-buttons">
-			{{#each sortButtons }}
-				<button class="simple-s3__sort-by-button{{#if isCurrentSortOrder }} simple-s3__sort-by-button--chosen{{/if}}" data-sort-by="{{ sortBy }}">
-					Sort by {{ sortBy }}
-				</button>
-			{{/each}}
-		</div>
-
-		<div class="simple-s3__bucket-items">
-
-			{{#each bucketItems }}
-
-				<div class="
-				simple-s3__bucket-item 
-
-				{{#if isFile }}
-					simple-s3__bucket-item--file
-				{{else}}
-					simple-s3__bucket-item--directory
-				{{/if}}
-
-				{{#if isImageAndPreview }}
-					simple-s3__bucket-item--preview-image
-				{{/if }}
-
-				{{ movingClasses }}
-
-				" data-key="{{ Key }}">
-
-					{{#if emptyMessage }}
-						<div class="simple-s3__bucket-item__text-content">
-							<p>{{emptyMessage}}</p>
-						</div>
-					{{else}}
-						
-					<a href="#" class="simple-s3__bucket-item__file-extension">{{ FileExtension }}</a>
-					
-					{{#if isImageAndPreview }}
-						<img class="simple-s3__bucket-item__img-preview" src="http://{{ bucketName }}.s3.amazonaws.com/{{ Key }}" alt="No alt text." />
+					{{#if showForm 'show-upload-form' }}
+						<i class="fa fa-times-circle simple-s3__color--red"></i>
+						<form class="simple-s3__left-col__button__inner simple-s3__left-col__button__extra-html simple-s3__upload-form" enctype="multipart/form-data">
+							{{! There is no space between input and button due to layout }}
+							<input class="simple-s3__upload-form__file" type="file" multiple /><button type="submit">
+								<i class="fa fa-chevron-right"></i>
+							</button>
+						</form>
 					{{/if}}
 
-					<div class="simple-s3__bucket-item__text-content">
+					{{#if showForm 'show-create-folder-form' }}
+						<i class="fa fa-times-circle simple-s3__color--red"></i>
+						<form class="simple-s3__left-col__button__inner simple-s3__left-col__button__extra-html simple-s3__create-folder-form" enctype="multipart/form-data">
+							{{! There is no space between input and button due to layout }}
+							<input class="simple-s3__create-folder-form__folder-name" type="text" placeholder="Folder name" /><button type="submit">
+								<i class="fa fa-chevron-right"></i>
+							</button>
+						</form>
+					{{/if}}
 
-						<p>
-							<a href="#" class="simple-s3__bucket-item__filter-directory-link">{{ Directory }}</a>
-							<a href="http://{{ bucketName }}.s3.amazonaws.com/{{ Key }}">{{ Filename }}</a>
+					{{#if showForm 'show-image-previews' }}
+						<i class="fa fa-image simple-s3__color--blue simple-s3__left-col__button__extra-html"></i>
+					{{/if}}
+
+					{{#if showForm 'show-sort-options' }}
+						<i class="fa fa-times-circle simple-s3__color--red"></i>
+						<div class="simple-s3__left-col__button__inner">
+							{{#each buttons 'sortButtons' }}
+								<button class="simple-s3__left-col__button simple-s3__sort-by-button{{#if isCurrentSortOrder }} simple-s3__sort-by-button--chosen{{/if}}" data-sort-by="{{ sortBy }}">
+									Sort by {{ sortBy }}
+								</button>
+							{{/each}}
+						</div>
+						<div class="simple-s3__left-col__button__extra-html"></div>
+
+					{{/if}}
+
+					<i class="fa {{ faIconClass }}"></i>
+
+				</button>
+			{{/each}}
+
+		</div>
+
+		<div class="simple-s3__right-col">
+
+			<span class="simple-s3__headline">
+
+				<div class="simple-s3__headline__left">
+					{{#each filteredFoldersLinks }}
+						<a class="simple-s3__headline__folder-filter-link" href="#" data-filter-dir="{{ link }}">
+							{{ linkName }}
+						</a>
+						{{#if notLastItem }}/{{/if}}
+					{{/each}}
+				</div>
+
+				<div class="simple-s3__headline__right">
+
+					<em class="simple-s3__headline__file-size">
+						{{ currentDir 'numberOfFiles' }} items, {{ currentDir 'totalSize' }} kb.
+					</em>
+
+					<a href="#">
+						<i class="fa fa-refresh simple-s3__refresh-button"></i>
+					</a>
+
+				</div>
+
+			</span>
+
+			<div class="simple-s3__bucket-items">
+
+				{{#each bucketItems }}
+
+					<div class="
+					simple-s3__bucket-item 
+
+					{{#if isFile }}
+						simple-s3__bucket-item--file
+					{{else}}
+						simple-s3__bucket-item--directory
+					{{/if}}
+
+					{{#if isImageAndPreview }}
+						simple-s3__bucket-item--preview-image
+					{{/if }}
+
+					{{ movingClasses }}
+
+					" data-key="{{ Key }}">
+
+						{{#if emptyMessage }}
+							<div class="simple-s3__bucket-item__text-content">
+								<p>{{emptyMessage}}</p>
+							</div>
+						{{else}}
+													
+						{{#if isImageAndPreview }}
+							<img class="simple-s3__bucket-item__img-preview" src="http://{{ bucketName }}.s3.amazonaws.com/{{ Key }}" alt="No alt text." />
+						{{/if}}
+
+						<div class="simple-s3__bucket-item__text-content">
+
+							<a href="#" class="simple-s3__bucket-item__filter-directory-link">
+								{{ Directory }}
+							</a>
+
+							<a href="http://{{ bucketName }}.s3.amazonaws.com/{{ Key }}">
+								{{ Filename }}
+							</a>
+
 							{{#if Filename }}
-								<em>{{ sizeInKb }} KB</em>
+								<em class="simple-s3__bucket-item__file-size">{{ sizeInKb }} KB</em>
 							{{/if}}
+
 							<span class="simple-s3__bucket-item__special-message">
 								{{ SpecialMessage }}
 							</span>
-						</p>
 
-						<div class="simple-s3__bucket-item__text-content__buttons">
+						</div>
+
+						<div class="simple-s3__bucket-item__buttons">
 
 							{{#each buttons 'bucketListItem' this }}
 
@@ -127,14 +148,48 @@
 
 						</div>
 
+						{{/if}}
+
 					</div>
 
-					{{/if}}
+				{{/each}}
 
-				</div>
+			</div>
 
-			{{/each}}
+		</div>
 
+		<div class="simple-s3__status {{#if noMessages }}simple-s3__status--inactive{{/if}}">
+			
+			{{! Show the progress bar of file uploads }}
+			{{#if progress }}
+				<div class="simple-s3__status__progress">
+			    <div class="simple-s3__status__progress-bar" role="progressbar" aria-valuenow="{{progress}}" aria-valuemin="0" aria-valuemax="100" style="width: {{progress}}%;">
+			    </div>
+			  </div>
+		  {{/if}}
+			
+			{{! Show status messages }}
+			<h1 class="simple-s3__headline">
+				Status:
+				{{#if loadingMessage }}
+					<span class="simple-s3__status__message">
+						{{ loadingMessage }}
+						<i class="fa fa-cog fa-spin"></i>
+					</span>
+				{{/if}}
+				{{#if errorMessage }}
+					<span class="simple-s3__status__message simple-s3__status__message--error">
+						{{ errorMessage }}
+						<i class="fa fa-exclamation"></i>
+					</span>
+				{{/if}}
+				{{#if noMessages }}
+					<span class="simple-s3__status__message">
+						All clear
+						<i class="fa fa-check"></i>
+					</span>
+				{{/if}}
+			</h1>
 		</div>
 
 	</div>

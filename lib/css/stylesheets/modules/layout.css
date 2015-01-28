@@ -16,11 +16,11 @@
 /* line 15, ../../sass/modules/layout.scss */
 .simple-s3 {
   font-size: 17px;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Lato', sans-serif !important;
   font-weight: 300;
   color: #363636;
 }
-/* line 5, ../../../../../../../../../../../../.rvm/gems/ruby-2.1.0/gems/compass-core-1.0.0.alpha.17/stylesheets/compass/reset/_utilities.scss */
+/* line 5, ../../../../../../../../.rvm/gems/ruby-2.1.0/gems/compass-core-1.0.0.alpha.17/stylesheets/compass/reset/_utilities.scss */
 .simple-s3 html, .simple-s3 body, .simple-s3 div, .simple-s3 span, .simple-s3 applet, .simple-s3 object, .simple-s3 iframe,
 .simple-s3 h1, .simple-s3 h2, .simple-s3 h3, .simple-s3 h4, .simple-s3 h5, .simple-s3 h6, .simple-s3 p, .simple-s3 blockquote, .simple-s3 pre,
 .simple-s3 a, .simple-s3 abbr, .simple-s3 acronym, .simple-s3 address, .simple-s3 big, .simple-s3 cite, .simple-s3 code,
@@ -41,39 +41,39 @@
   font-size: 100%;
   vertical-align: baseline;
 }
-/* line 22, ../../../../../../../../../../../../.rvm/gems/ruby-2.1.0/gems/compass-core-1.0.0.alpha.17/stylesheets/compass/reset/_utilities.scss */
+/* line 22, ../../../../../../../../.rvm/gems/ruby-2.1.0/gems/compass-core-1.0.0.alpha.17/stylesheets/compass/reset/_utilities.scss */
 .simple-s3 html {
   line-height: 1;
 }
-/* line 24, ../../../../../../../../../../../../.rvm/gems/ruby-2.1.0/gems/compass-core-1.0.0.alpha.17/stylesheets/compass/reset/_utilities.scss */
+/* line 24, ../../../../../../../../.rvm/gems/ruby-2.1.0/gems/compass-core-1.0.0.alpha.17/stylesheets/compass/reset/_utilities.scss */
 .simple-s3 ol, .simple-s3 ul {
   list-style: none;
 }
-/* line 26, ../../../../../../../../../../../../.rvm/gems/ruby-2.1.0/gems/compass-core-1.0.0.alpha.17/stylesheets/compass/reset/_utilities.scss */
+/* line 26, ../../../../../../../../.rvm/gems/ruby-2.1.0/gems/compass-core-1.0.0.alpha.17/stylesheets/compass/reset/_utilities.scss */
 .simple-s3 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-/* line 28, ../../../../../../../../../../../../.rvm/gems/ruby-2.1.0/gems/compass-core-1.0.0.alpha.17/stylesheets/compass/reset/_utilities.scss */
+/* line 28, ../../../../../../../../.rvm/gems/ruby-2.1.0/gems/compass-core-1.0.0.alpha.17/stylesheets/compass/reset/_utilities.scss */
 .simple-s3 caption, .simple-s3 th, .simple-s3 td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle;
 }
-/* line 30, ../../../../../../../../../../../../.rvm/gems/ruby-2.1.0/gems/compass-core-1.0.0.alpha.17/stylesheets/compass/reset/_utilities.scss */
+/* line 30, ../../../../../../../../.rvm/gems/ruby-2.1.0/gems/compass-core-1.0.0.alpha.17/stylesheets/compass/reset/_utilities.scss */
 .simple-s3 q, .simple-s3 blockquote {
   quotes: none;
 }
-/* line 103, ../../../../../../../../../../../../.rvm/gems/ruby-2.1.0/gems/compass-core-1.0.0.alpha.17/stylesheets/compass/reset/_utilities.scss */
+/* line 103, ../../../../../../../../.rvm/gems/ruby-2.1.0/gems/compass-core-1.0.0.alpha.17/stylesheets/compass/reset/_utilities.scss */
 .simple-s3 q:before, .simple-s3 q:after, .simple-s3 blockquote:before, .simple-s3 blockquote:after {
   content: "";
   content: none;
 }
-/* line 32, ../../../../../../../../../../../../.rvm/gems/ruby-2.1.0/gems/compass-core-1.0.0.alpha.17/stylesheets/compass/reset/_utilities.scss */
+/* line 32, ../../../../../../../../.rvm/gems/ruby-2.1.0/gems/compass-core-1.0.0.alpha.17/stylesheets/compass/reset/_utilities.scss */
 .simple-s3 a img {
   border: none;
 }
-/* line 116, ../../../../../../../../../../../../.rvm/gems/ruby-2.1.0/gems/compass-core-1.0.0.alpha.17/stylesheets/compass/reset/_utilities.scss */
+/* line 116, ../../../../../../../../.rvm/gems/ruby-2.1.0/gems/compass-core-1.0.0.alpha.17/stylesheets/compass/reset/_utilities.scss */
 .simple-s3 article, .simple-s3 aside, .simple-s3 details, .simple-s3 figcaption, .simple-s3 figure, .simple-s3 footer, .simple-s3 header, .simple-s3 hgroup, .simple-s3 main, .simple-s3 menu, .simple-s3 nav, .simple-s3 section, .simple-s3 summary {
   display: block;
 }
@@ -282,7 +282,7 @@
   margin: 0 0 1px;
   overflow: hidden;
   position: relative;
-  max-height: 2.65em;
+  height: 2.65em;
 }
 /* line 233, ../../sass/modules/layout.scss */
 .simple-s3 .simple-s3__bucket-item:hover {
@@ -310,22 +310,22 @@
 .simple-s3 .simple-s3__bucket-item--hide-buttons button {
   display: none;
 }
-/* line 265, ../../sass/modules/layout.scss */
+/* line 263, ../../sass/modules/layout.scss */
 .simple-s3 .simple-s3__bucket-item--directory {
   cursor: pointer;
 }
-/* line 269, ../../sass/modules/layout.scss */
+/* line 267, ../../sass/modules/layout.scss */
 .simple-s3 .simple-s3__bucket-item--directory.simple-s3__bucket-item--movable {
   opacity: 0.5;
 }
-/* line 275, ../../sass/modules/layout.scss */
+/* line 273, ../../sass/modules/layout.scss */
 .simple-s3 .simple-s3__bucket-item--file.simple-s3__bucket-item--movable {
   cursor: pointer;
   -moz-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
   -webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
-/* line 278, ../../sass/modules/layout.scss */
+/* line 276, ../../sass/modules/layout.scss */
 .simple-s3 .simple-s3__bucket-item--file.simple-s3__bucket-item--movable:hover {
   background: #93e7f3;
   color: #363636;
@@ -333,14 +333,14 @@
   -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
 }
-/* line 286, ../../sass/modules/layout.scss */
+/* line 284, ../../sass/modules/layout.scss */
 .simple-s3 .simple-s3__bucket-item--folder-is-taking-moving-files {
   cursor: pointer;
   -moz-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
   -webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
-/* line 289, ../../sass/modules/layout.scss */
+/* line 287, ../../sass/modules/layout.scss */
 .simple-s3 .simple-s3__bucket-item--folder-is-taking-moving-files:hover {
   background: #93e7f3;
   color: #363636;
@@ -348,54 +348,54 @@
   -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
 }
-/* line 296, ../../sass/modules/layout.scss */
+/* line 294, ../../sass/modules/layout.scss */
 .simple-s3 .simple-s3__bucket-item--to-be-moved {
   background: #93e7f3 !important;
   color: #363636;
   pointer-events: none;
 }
-/* line 300, ../../sass/modules/layout.scss */
+/* line 298, ../../sass/modules/layout.scss */
 .simple-s3 .simple-s3__bucket-item--to-be-moved:hover {
   color: inherit;
 }
-/* line 305, ../../sass/modules/layout.scss */
+/* line 303, ../../sass/modules/layout.scss */
 .simple-s3 .simple-s3__bucket-item--not-the-file-to-be-moved {
   opacity: 0.3;
   pointer-events: none;
 }
-/* line 308, ../../sass/modules/layout.scss */
+/* line 306, ../../sass/modules/layout.scss */
 .simple-s3 .simple-s3__bucket-item--not-the-file-to-be-moved:hover {
   color: inherit;
 }
-/* line 315, ../../sass/modules/layout.scss */
+/* line 313, ../../sass/modules/layout.scss */
 .simple-s3 .simple-s3__bucket-item--preview-image .simple-s3__bucket-item__file-extension {
   padding-top: 3.3em;
   height: 120px;
 }
-/* line 324, ../../sass/modules/layout.scss */
+/* line 322, ../../sass/modules/layout.scss */
 .simple-s3 .simple-s3__bucket-item:hover .simple-s3__bucket-item__buttons {
   display: inline-block;
 }
-/* line 326, ../../sass/modules/layout.scss */
+/* line 324, ../../sass/modules/layout.scss */
 .simple-s3 .simple-s3__bucket-item:hover .simple-s3__bucket-item__buttons button:hover {
   color: #93e7f3;
 }
-/* line 333, ../../sass/modules/layout.scss */
+/* line 331, ../../sass/modules/layout.scss */
 .simple-s3 .simple-s3__bucket-item__text-content {
   float: left;
   padding: 0.75em 0.85em 0.7em;
 }
-/* line 338, ../../sass/modules/layout.scss */
+/* line 336, ../../sass/modules/layout.scss */
 .simple-s3 .simple-s3__bucket-item__buttons {
   display: none;
   float: right;
   margin-left: 1px;
 }
-/* line 342, ../../sass/modules/layout.scss */
+/* line 340, ../../sass/modules/layout.scss */
 .simple-s3 .simple-s3__bucket-item__buttons button {
   background: #ececec;
 }
-/* line 347, ../../sass/modules/layout.scss */
+/* line 345, ../../sass/modules/layout.scss */
 .simple-s3 .simple-s3__bucket-item__file-extension {
   float: right;
   width: 85px;
@@ -403,17 +403,17 @@
   text-decoration: none;
   font-weight: normal;
 }
-/* line 356, ../../sass/modules/layout.scss */
+/* line 354, ../../sass/modules/layout.scss */
 .simple-s3 .simple-s3__bucket-item__img-preview {
   float: right;
   max-height: 120px;
   margin-right: 0.3em;
 }
-/* line 362, ../../sass/modules/layout.scss */
+/* line 360, ../../sass/modules/layout.scss */
 .simple-s3 .simple-s3__bucket-item__filter-directory-link {
   font-weight: normal;
 }
-/* line 368, ../../sass/modules/layout.scss */
+/* line 366, ../../sass/modules/layout.scss */
 .simple-s3 input, .simple-s3 button {
   outline: none;
   border: none;
@@ -421,33 +421,33 @@
   vertical-align: top;
   min-height: 2.65em;
 }
-/* line 377, ../../sass/modules/layout.scss */
+/* line 375, ../../sass/modules/layout.scss */
 .simple-s3 input[type="file"] {
   background: #fff;
   padding-bottom: 0;
   vertical-align: top;
 }
-/* line 384, ../../sass/modules/layout.scss */
+/* line 382, ../../sass/modules/layout.scss */
 .simple-s3 input[type="text"] {
   text-align: left;
   padding: 0.75em 0.85em 0.7em;
 }
-/* line 390, ../../sass/modules/layout.scss */
+/* line 388, ../../sass/modules/layout.scss */
 .simple-s3 button,
 .simple-s3 input[type="submit"] {
   cursor: pointer;
 }
-/* line 396, ../../sass/modules/layout.scss */
+/* line 394, ../../sass/modules/layout.scss */
 .simple-s3 .fa {
   font-family: FontAwesome;
   font-style: normal;
   font-weight: normal;
 }
-/* line 403, ../../sass/modules/layout.scss */
+/* line 401, ../../sass/modules/layout.scss */
 .simple-s3__color--red {
   color: #e25959 !important;
 }
-/* line 406, ../../sass/modules/layout.scss */
+/* line 404, ../../sass/modules/layout.scss */
 .simple-s3__color--blue {
   color: #93e7f3 !important;
 }

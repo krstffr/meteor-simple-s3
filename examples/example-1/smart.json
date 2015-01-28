@@ -1,0 +1,7 @@
+{ 
+	"packages": {
+		"krstffr:simple-s3": {
+			"path": "../.."
+		}
+	}
+}

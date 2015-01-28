@@ -1,0 +1,15 @@
+{
+  "meteor": {},
+  "dependencies": {
+    "basePackages": {
+      "krstffr:simple-s3": {
+        "path": "../.."
+      }
+    },
+    "packages": {
+      "krstffr:simple-s3": {
+        "path": "../.."
+      }
+    }
+  }
+}

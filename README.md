@@ -2,6 +2,10 @@
 
 This package uses a lot of dependencies. So if that's not your thing, don't use it.
 
+## Disabling the Cache-Control header
+
+Just add ```"AWSDisableCacheHeader": true``` to your Meteor settings.
+
 ## Example
 
 The example app is using the old ```mrt```/```smart.json``` for including the package by path "../.." instead of the package on atmosphere. This is to make it easier to add new features. Run ```mrt update``` in the example folder to add the package!

@@ -2,7 +2,7 @@ Package.describe({
   name: "krstffr:simple-s3",
   summary: "UI for viewing, uploading and deleting files from your AWS S3.",
   git: "https://github.com/krstffr/meteor-simple-s3",
-  version: "0.1.6"
+  version: "0.1.7"
 });
 
 Npm.depends({

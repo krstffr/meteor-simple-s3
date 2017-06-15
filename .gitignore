@@ -3,3 +3,5 @@ lib/css/.sass-cache/
 lib/css/.sass-cache
 .sass-cache/
 .sass-cache
+.DS_Store
+.vscode
